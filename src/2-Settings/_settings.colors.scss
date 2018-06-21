@@ -1,0 +1,34 @@
+/**
+ * COLORS SETTINGS
+ */
+
+ // Colores de marca
+ $color-brand-map: (
+   brand:  #409EFF,
+   dark:   darken(#409EFF, 5%),
+   light:  lighten(#409EFF, 5%),
+   teal:   #00bfa5,
+   purple: #6d5cae
+ ) !default;
+
+
+ // Colores escala de grises
+ $color-gray-map: (
+   black: #000000,
+   gray1: #333333,
+   gray2: #555555,
+   gray3: #777777,
+   gray4: #999999,
+   gray5: #cccccc,
+   gray6: #d5d5d5,
+   white: #ffffff
+ ) !default;
+
+
+ // Colores para notificaciones
+ $color-notify-map: (
+   success: #67C23A,
+   warning: #E6A23C,
+   danger:  #F56C6C,
+   info:    #909399
+ ) !default;

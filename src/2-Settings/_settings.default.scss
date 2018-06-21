@@ -1,0 +1,21 @@
+/**
+ * DEFAULTS SETTINGS
+ */
+
+// Espacio por defecto
+$space: $base-line-height * 1rem;
+
+$base-background-color:   gray(white);
+$base-text-color:         gray(gray2);
+$base-link-color:         brand();
+$base-link-color-dark:    brand();
+$base-heading-color:      gray(gray1);
+$caption-colour:          gray(gray4);
+$code-background-colour:  gray(white);
+
+$border-radius: 5px !default;
+
+$gutter: $space !default;
+$grid-columns: 12 !default;
+
+$wrappers: 1440px;
