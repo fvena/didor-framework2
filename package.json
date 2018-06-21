@@ -14,5 +14,8 @@
   },
   "bugs": {
     "url": "https://github.com/fvena/didor-framework/issues"
+  },
+  "devDependencies": {
+    "docsify-cli": "^4.2.1"
   }
 }

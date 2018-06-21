@@ -30,6 +30,14 @@ window.$docsify = {
             </body>
           `;
           return `<iframe srcdoc="${srcdoc}" class="demoContainer" scrolling="no" frameborder="0" onload="autoResize(this)"></iframe>`;
+        } else {
+          code = code.replace(/@DOCSIFY_QM@/g, '`')
+          const hl = Prism.highlight(
+            code,
+            Prism.languages[language] || Prism.languages.markup
+          )
+
+          return `<pre v-pre data-lang="${language}"><code class="lang-${language}">${hl}</code></pre>`
         }
       }
     }
