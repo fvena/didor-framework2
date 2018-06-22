@@ -1,7 +1,7 @@
 * Getting started
 
   * [Home](/)
-  * [Guide](README2.md)
+  * [Readme](README2.md)
   * [Guide](guide.md)
   * [Guide](guide.md)
   * [Guide](guide.md)

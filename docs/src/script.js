@@ -17,7 +17,7 @@ window.$docsify = {
       code: function(code, language){
         if (language === 'iframe'){
           var title = 'Demo code';
-          var stylesheet = `<link rel='stylesheet' href='//unpkg.com/docsify/lib/themes/vue.css'>`;
+          var stylesheet = `<link rel='stylesheet' href='src/stylesheets/didor.css'>`;
           var script = '';
           var srcdoc = `
             <head>
@@ -29,7 +29,7 @@ window.$docsify = {
               ${script}
             </body>
           `;
-          return `<iframe srcdoc="${srcdoc}" class="demoContainer" scrolling="no" frameborder="0" onload="autoResize(this)"></iframe>`;
+          return `<iframe srcdoc="${srcdoc}" class="demoContainer" scrolling="no" frameborder="0" height="auto" onload="autoResize(this)"></iframe>`;
         } else {
           code = code.replace(/@DOCSIFY_QM@/g, '`')
           const hl = Prism.highlight(
@@ -60,5 +60,19 @@ function resizeAllDemoIframes(){
  * Resize iframes to adapt its content
  */
 function autoResize(iframe){
-  iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+  setTimeout(function(){
+    var body = iframe.contentWindow.document.body;
+    var html = iframe.contentWindow.document.documentElement;
+    var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
+    console.log(height);
+    console.log(iframe.contentWindow.document.body.scrollHeight);
+    console.log(iframe.contentWindow.document.body.offsetHeight);
+    console.log(iframe.contentWindow.document.documentElement.clientHeight);
+    console.log(iframe.contentWindow.document.documentElement.scrollHeight);
+    console.log(iframe.contentWindow.document.documentElement.offsetHeight);
+    iframe.style.visibility = 'hidden';
+    iframe.style.height = '10px'; // reset to minimal height in case going from longer to shorter doc
+    iframe.style.height = height + 5 + 'px';
+    iframe.style.visibility = 'visible';
+  }, 500);
 }

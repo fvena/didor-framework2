@@ -12,7 +12,7 @@ img {
   font-style: italic; /* [2] */
   vertical-align: middle; /* [3] */
   box-sizing: content-box;
-  -ms-interpolation-mode: bicubic;
+  -ms-interpolation-mode: bicubic; // sass-lint:disable-line no-vendor-prefixes
 }
 
 

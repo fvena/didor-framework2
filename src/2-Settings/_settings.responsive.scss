@@ -16,23 +16,23 @@
  *   large - Monitores grandes
  */
 
- $palm:  37.5em;   // ~600px
- $lap:   56.25em;  // ~900px
- $small: 75em;     // ~1200px
- $desk:  112.5em;  // ~1800px
+$palm:  37.5em;   // ~600px
+$lap:   56.25em;  // ~900px
+$small: 75em;     // ~1200px
+$desk:  112.5em;  // ~1800px
 
- $breakpoints: (
-   palm:     'screen and (max-width: #{$palm - 1})',
-   lap:      'screen and (min-width: #{$palm}) and (max-width: #{$lap - 1})',
-   small:    'screen and (min-width: #{$lap}) and (max-width: #{$small - 1})',
-   desk:     'screen and (min-width: #{$small}) and (max-width: #{$desk - 1})',
-   large:    'screen and (min-width: #{$desk})',
-   portrait: 'screen and (max-width: #{$lap - 1})',
-   landscape:'screen and (min-width: #{$lap})',
-   touch:    'screen and (max-width: #{$small - 1})',
-   monitor:  'screen and (min-width: #{$small})',
-   tablet:   'screen and (min-width: #{$palm}) and (max-width: #{$small - 1})'
- );
+$breakpoints: (
+  palm:      'screen and (max-width: #{$palm - 1})',
+  lap:       'screen and (min-width: #{$palm}) and (max-width: #{$lap - 1})',
+  small:     'screen and (min-width: #{$lap}) and (max-width: #{$small - 1})',
+  desk:      'screen and (min-width: #{$small}) and (max-width: #{$desk - 1})',
+  large:     'screen and (min-width: #{$desk})',
+  portrait:  'screen and (max-width: #{$lap - 1})',
+  landscape: 'screen and (min-width: #{$lap})',
+  touch:     'screen and (max-width: #{$small - 1})',
+  monitor:   'screen and (min-width: #{$small})',
+  tablet:    'screen and (min-width: #{$palm}) and (max-width: #{$small - 1})'
+);
 
 
 /**

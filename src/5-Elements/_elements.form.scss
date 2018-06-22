@@ -28,7 +28,7 @@ input[type='password'],
 input[type='search'],
 input[type='url'],
 textarea {
-  //border: 1px solid $border-color;
+  border: 1px solid $border-color;
 }
 
 input[type='radio'],
@@ -40,7 +40,7 @@ input[type='checkbox'] {
 }
 
 input[disabled] {
-  //background-color: lighten($color-ui, 5%);
+  background-color: lighten($color-ui, 5%);
 
   &:hover {
     cursor: not-allowed;

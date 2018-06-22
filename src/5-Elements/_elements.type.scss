@@ -1,6 +1,7 @@
 /**
  * TYPE
  */
+$type-transparent-color: rgba(0, 0, 0, 0);
 
 // Headings. OpenType ligatures, discretionary ligatures and lining figures enabled if available.
 h1,
@@ -75,7 +76,6 @@ i,
 small,
 .caption {
   @include fontsize(theta);
-
   font-family: font($heading-type, font-family);
   font-style: normal;
   font-weight: font($heading-type, regular);
@@ -111,7 +111,6 @@ h3 + .caption,
 // Quotes.
 blockquote {
   @include fontsize(zeta);
-
   margin-left: -1rem;
   padding: halve($space) 1rem;
   border-left: .15rem solid brand();
@@ -134,8 +133,8 @@ pre {
   display: block;
   padding: halve($space);
   white-space: pre-wrap;
-  word-break: break-all;
   word-wrap: break-word;
+  word-break: break-all;
 }
 
 code {
@@ -148,11 +147,11 @@ hr {
   padding-top: double($space);
   padding-bottom: double($space);
   border: 0;
-
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, $caption-colour 50%);
+  background-image: linear-gradient(to bottom, $type-transparent-color 50%, $caption-colour 50%);
   background-repeat: repeat-x;
   background-position: 0 50%;
   background-size: 100% .15rem;
+
 }
 
 

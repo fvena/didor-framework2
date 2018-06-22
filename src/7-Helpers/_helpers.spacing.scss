@@ -3,7 +3,7 @@
  */
 
 // Lista de espacios
-// Se generarán clases helpers con márgenes y padding automaticamente por cada 
+// Se generarán clases helpers con márgenes y padding automaticamente por cada
 // item de la lista de la forma:
 // .margin-half-top
 // .padding-triple-left
@@ -46,13 +46,13 @@ $spacing-map: (
   }
 
   .#{$attr}-sides {
-    #{$attr}-right: $space !important;
     #{$attr}-left: $space !important;
+    #{$attr}-right: $space !important;
   }
 
   .#{$attr}-ends {
-    #{$attr}-top: $space !important;
     #{$attr}-bottom: $space !important;
+    #{$attr}-top: $space !important;
   }
 
   .no-#{$attr} {
@@ -76,13 +76,13 @@ $spacing-map: (
   }
 
   .no-#{$attr}-sides {
-    #{$attr}-right: 0 !important;
     #{$attr}-left: 0 !important;
+    #{$attr}-right: 0 !important;
   }
 
   .no-#{$attr}-ends {
-    #{$attr}-top: 0 !important;
     #{$attr}-bottom: 0 !important;
+    #{$attr}-top: 0 !important;
   }
 
 
@@ -115,13 +115,13 @@ $spacing-map: (
     }
 
     .#{$attr}-#{$name}-sides {
-      #{$attr}-right: #{$size} !important;
       #{$attr}-left: #{$size} !important;
+      #{$attr}-right: #{$size} !important;
     }
 
     .#{$attr}-#{$name}-ends {
-      #{$attr}-top: #{$size} !important;
       #{$attr}-bottom: #{$size} !important;
+      #{$attr}-top: #{$size} !important;
     }
   }
 }
