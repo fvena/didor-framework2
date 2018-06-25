@@ -15,7 +15,7 @@ window.$docsify = {
   markdown: {
     renderer: {
       code: function(code, language){
-        if (language === 'iframe'){
+        if (language === 'demo'){
           var title = 'Demo code';
           var stylesheet = `<link rel='stylesheet' href='src/stylesheets/didor.css'>`;
           var script = '';

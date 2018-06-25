@@ -181,7 +181,7 @@
  */
 /**
  * GENERIC
- * 
+ *
  * Es la primera capa que tiene efecto sobre el CSS. Sirve generalmente para
  * partir con el mismo lienzo en todos los navegadores, reseteando y normalizando
  * los valores por defecto. También puede contener configuraciones globales que
@@ -579,7 +579,7 @@ footer, header, hgroup, menu, nav, section {
 
 /**
  * BOX SIZING
- * 
+ *
  * Establece de forma global `box-sizing` como `border-box`.
  */
 html {
@@ -591,9 +591,9 @@ html {
 /**
  * ELEMENTS
  *
- * Contienen los estilos sin clases, es decir, como se verá un elemento H1 a 
- * lo largo de toda la aplicación por defecto, sin una clase que modifique su 
- * estilo. Se configuran inicialmente en el proyecto, y no suelen modificarse 
+ * Contienen los estilos sin clases, es decir, como se verá un elemento H1 a
+ * lo largo de toda la aplicación por defecto, sin una clase que modifique su
+ * estilo. Se configuran inicialmente en el proyecto, y no suelen modificarse
  * posteriormente.
  */
 /**
