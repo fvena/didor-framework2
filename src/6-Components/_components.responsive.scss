@@ -1,0 +1,72 @@
+.responsive {
+  table-layout: fixed;
+  position: relative;
+  z-index: 2;
+
+  td, th {
+    // border: 1px solid $border-color;
+    text-align: center;
+    padding: quarter($space);
+  }
+
+  th {
+    font-weight: font($body-type, medium);
+    color: gray(gray1);
+    padding-top: $space;
+
+    i[class^="icon-"],
+    i[class*=" icon-"] {
+      display: block;
+      font-size: 30px;
+      opacity: .4;
+      margin-bottom: quarter($space);
+
+      &.icon-palm {
+        font-size: 27px;
+        margin-bottom: calc(#{quarter($space)} + 3px);
+      }
+    }
+  }
+}
+
+.responsive--back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 1;
+
+  td {
+    background-color: #F1F1F1;
+    position: relative;
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      width: .11rem;
+      height: 100%;
+      background-color: #fcfcfc;
+      position: absolute;
+      top: 0;
+    }
+
+    &:before { left: 0; }
+    &:after { right: 0; }
+  }
+}
+
+.responsive__block {
+  background-color: brand();
+  color: white;
+  border-radius: 4px;
+  height: double($space);
+  line-height: double($space);
+  padding: 0 $space;
+  margin: quarter($space);
+  text-align: left;
+}
+
+.responsive__block--disabled {
+  background-color: gray(gray6);
+}

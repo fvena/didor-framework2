@@ -1,0 +1,49 @@
+/**
+ * ICONOS
+ *
+ * Estilos para los iconos
+ */
+
+$icon-desktop: "\ea01";
+$icon-lap: "\ea02";
+$icon-large: "\ea03";
+$icon-palm: "\ea04";
+$icon-small: "\ea05";
+
+
+@font-face {
+  font-family: didor;
+  src: url("../fonts/didor.eot");
+  src: url("../fonts/didor.eot?#iefix") format("embedded-opentype"), url("../fonts/didor.woff2") format("woff2"), url("../fonts/didor.woff") format("woff"), url("../fonts/didor.ttf") format("truetype"), url("../fonts/didor.svg#didor") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+%icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'didor' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+[class^='icon-'],
+[class*=' icon-'] {
+  @extend %icon;
+}
+
+
+.icon-desktop:before { content: "\ea01"; }
+.icon-lap:before { content: "\ea02"; }
+.icon-large:before { content: "\ea03"; }
+.icon-palm:before { content: "\ea04"; }
+.icon-small:before { content: "\ea05"; }

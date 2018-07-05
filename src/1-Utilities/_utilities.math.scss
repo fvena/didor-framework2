@@ -38,7 +38,11 @@
 
 
 @function rem2px($value) {
-  @return $value / 1rem * 10px;
+  @return $value / 1rem * 16px;
+}
+
+@function px2em($value) {
+  @return $value / 16px * 1em;
 }
 
 /**

@@ -1,8 +1,8 @@
-* Getting started
+* General
 
   * [Home](/)
   * [Readme](README2.md)
-  * [Guide](guide.md)
+  * [Responsive](responsive.md)
   * [Guide](guide.md)
   * [Guide](guide.md)
 

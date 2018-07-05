@@ -18,12 +18,18 @@
  */
 
 @mixin media($media-query) {
+  $breakpointsMap: $breakpointsDeskFirst;
+
+  // Compruebo si es mobile first
+  @if ($mobileFirst) {
+    $breakpointsMap: $breakpointsMobileFirst;
+  }
 
   // Si el alias existe en la lista que indicamos en el setting
-  @if map-has-key($breakpoints, $media-query) {
+  @if map-has-key($breakpointsMap, $media-query) {
 
     // Crea la regla media-query
-    @media #{map-get($breakpoints, $media-query)} {
+    @media #{map-get($breakpointsMap, $media-query)} {
       @content;
     }
   }

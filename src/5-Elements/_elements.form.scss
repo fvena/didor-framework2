@@ -40,7 +40,7 @@ input[type='checkbox'] {
 }
 
 input[disabled] {
-  background-color: lighten($color-ui, 5%);
+  background-color: gray(gray5);
 
   &:hover {
     cursor: not-allowed;
