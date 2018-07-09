@@ -21,9 +21,13 @@
   },
   "devDependencies": {
     "docsify-cli": "^4.2.1",
-    "node-sass": "4.9.0",
+    "fs": "^0.0.1-security",
+    "node-sass": "^4.9.0",
     "sass-lint": "1.12.1",
     "webfont": "8.1.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "get-sass-vars": "^2.0.0",
+    "sass-extract": "^2.1.0"
+  }
 }

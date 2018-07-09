@@ -1,14 +1,12 @@
 * General
 
   * [Home](/)
-  * [Readme](README2.md)
   * [Responsive](responsive.md)
-  * [Guide](guide.md)
-  * [Guide](guide.md)
+  * [Colores](colors.md)
 
 * Customization
 
-  * [Guide](guide.md)
+  * [Readme](README2.md)
   * [Guide](guide.md)
   * [Guide](guide.md)
   * [Guide](guide.md)
