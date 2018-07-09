@@ -1133,12 +1133,30 @@ pre {
 .responsive__block--disabled {
   background-color: #d5d5d5; }
 
-.colorBlock {
-  color: white;
+.colorBlock,
+.colorBlock__col {
+  display: inline-block;
+  width: calc(24% - 0.4rem);
+  color: rgba(255, 255, 255, 0.7);
   border-radius: 4px;
   padding: 0.8rem 1.6rem;
-  margin: 0.4rem;
-  text-align: left; }
+  margin-bottom: 0.8rem;
+  margin-right: 0.4rem;
+  text-align: left;
+  overflow: hidden; }
+  .colorBlock:nth-of-type(4n + 0),
+  .colorBlock__col:nth-of-type(4n + 0) {
+    margin-right: 0; }
+
+.colorBlock__name {
+  color: white; }
+
+.colorBlock__col {
+  padding: 0; }
+
+.colorBlock__row {
+  padding: 0.8rem 1.6rem;
+  width: 100%; }
 
 /**
  * HELPERS
@@ -1156,16 +1174,16 @@ pre {
 .bg-brand {
   background-color: #2badc4 !important; }
 
-.text-dark {
+.text-brand-dark {
   color: #269baf !important; }
 
-.bg-dark {
+.bg-brand-dark {
   background-color: #269baf !important; }
 
-.text-light {
+.text-brand-light {
   color: #36bbd3 !important; }
 
-.bg-light {
+.bg-brand-light {
   background-color: #36bbd3 !important; }
 
 .text-teal {
@@ -1174,11 +1192,35 @@ pre {
 .bg-teal {
   background-color: #00bfa5 !important; }
 
+.text-teal-dark {
+  color: #00a68f !important; }
+
+.bg-teal-dark {
+  background-color: #00a68f !important; }
+
+.text-teal-light {
+  color: #00d9bb !important; }
+
+.bg-teal-light {
+  background-color: #00d9bb !important; }
+
 .text-purple {
   color: #6d5cae !important; }
 
 .bg-purple {
   background-color: #6d5cae !important; }
+
+.text-purple-dark {
+  color: #6150a1 !important; }
+
+.bg-purple-dark {
+  background-color: #6150a1 !important; }
+
+.text-purple-light {
+  color: #7c6db6 !important; }
+
+.bg-purple-light {
+  background-color: #7c6db6 !important; }
 
 .text-black {
   color: #000000 !important; }

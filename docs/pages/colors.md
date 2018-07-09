@@ -1,42 +1,18 @@
-# Colores
+# Esquema de colores
 
-``` demo
-<div id='colors'></div>
-<script>
-  function loadJSON(file, callback) {   
+## Colores principales
 
-    var xobj = new XMLHttpRequest();
-    xobj.overrideMimeType('application/json');
-    xobj.open('GET', file, true);
-    xobj.onreadystatechange = function () {
-      if (xobj.readyState == 4 && xobj.status == '200') {
-        callback(xobj.responseText);
-      }
-    };
-    xobj.send(null);  
-  }
+Los colores principales son utilizados para elementos que deban reflejar la identidad de la marca. Cada color tiene una variante más clara y más oscura.
 
 
-  loadJSON('/src/assets/vars.json', function(response) {
-    var colors = JSON.parse(response);
-    var content = '';
+colors[brand]>
 
-    for (var colorMap in colors) {
-      content += `<h1>${colorMap}</h1>`;
+## Colores grises
+Los colores de la escala de grises son utilizados para textos, fondos, lineas y bordes.
 
-      for (var color in colors[colorMap]) {
-        var item = colors[colorMap][color];
-        content += `
-          <div class='colorBlock bg-${item.name}'>
-            <div class='colorBlock__name'>${item.name}</div>
-            ${item.valueHex}<br>
-            ${item.valueRGBA}
-          </div>
-        `;
-      }
-    }
+colors[gray]>
 
-    document.getElementById('colors').innerHTML = content;
-  });
-</script>
-```
+## Colores de notificaciones
+Son los colores utilizados para las notificaciones en la interfaz, se utilizan en botones, mensajes de alerta, elementos de formularios, e indican el estado de un elemento o el resultado de una acción.
+
+colors[notify]>

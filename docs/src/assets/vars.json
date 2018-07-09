@@ -6,12 +6,12 @@
       "valueRGBA": "rgba(43,173,196,1)"
     },
     {
-      "name": "dark",
+      "name": "brand-dark",
       "valueHex": "#269baf",
       "valueRGBA": "rgba(38,155,175,1)"
     },
     {
-      "name": "light",
+      "name": "brand-light",
       "valueHex": "#36bbd3",
       "valueRGBA": "rgba(54,187,211,1)"
     },
@@ -21,9 +21,29 @@
       "valueRGBA": "rgba(0,191,165,1)"
     },
     {
+      "name": "teal-dark",
+      "valueHex": "#00a68f",
+      "valueRGBA": "rgba(0,166,143,1)"
+    },
+    {
+      "name": "teal-light",
+      "valueHex": "#00d9bb",
+      "valueRGBA": "rgba(0,217,187,1)"
+    },
+    {
       "name": "purple",
       "valueHex": "#6d5cae",
       "valueRGBA": "rgba(109,92,174,1)"
+    },
+    {
+      "name": "purple-dark",
+      "valueHex": "#6150a1",
+      "valueRGBA": "rgba(97,80,161,1)"
+    },
+    {
+      "name": "purple-light",
+      "valueHex": "#7c6db6",
+      "valueRGBA": "rgba(124,109,182,1)"
     }
   ],
   "gray": [

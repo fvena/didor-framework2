@@ -5,10 +5,14 @@
 // Colores de marca
 $color-brand-map: (
   brand:  #2badc4,
-  dark:   darken(#2badc4, 5%),
-  light:  lighten(#2badc4, 5%),
+  brand-dark:   darken(#2badc4, 5%),
+  brand-light:  lighten(#2badc4, 5%),
   teal:   #00bfa5,
-  purple: #6d5cae
+  teal-dark:   darken(#00bfa5, 5%),
+  teal-light:  lighten(#00bfa5, 5%),
+  purple: #6d5cae,
+  purple-dark:   darken(#6d5cae, 5%),
+  purple-light:  lighten(#6d5cae, 5%)
 ) !default;
 
 

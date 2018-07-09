@@ -57,7 +57,7 @@ modificarlos en los ajustes.
 
 #### Enfoque Desktop first
 
-``` demo
+```demo
 <table class='responsive'>
   <tr>
     <th><i class='icon-palm'></i> Palm</th>
@@ -101,7 +101,7 @@ modificarlos en los ajustes.
 
 #### Enfoque Mobile first
 
-``` demo
+```demo
 <table class='responsive'>
   <tr>
     <th><i class='icon-palm'></i> Palm</th>

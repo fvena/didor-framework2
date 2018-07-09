@@ -11,37 +11,6 @@ window.$docsify = {
   pagination: {
     previousText: 'Anterior',
     nextText: 'Siguiente',
-  },
-  markdown: {
-    renderer: {
-      code: function(code, language){
-        if (language === 'demo'){
-          var title = 'Demo code';
-          var stylesheet = `<link rel='stylesheet' href='src/stylesheets/didor.css'>`;
-          var script = '';
-          var codeScape = code.replace(/\"/g,'\\"');
-          var srcdoc = `
-            <head>
-              <title>${title}</title>
-              ${stylesheet}
-            </head>
-            <body style='background-color: #FAFAFA !important'>
-              ${code}
-              ${script}
-            </body>
-          `;
-          return `<iframe srcdoc="${srcdoc}" class="demoContainer" scrolling="no" frameborder="0" height="auto" onload="autoResize(this)"></iframe>`;
-        } else {
-          code = code.replace(/@DOCSIFY_QM@/g, '`')
-          const hl = Prism.highlight(
-            code,
-            Prism.languages[language] || Prism.languages.markup
-          )
-
-          return `<pre v-pre data-lang="${language}"><code class="lang-${language}">${hl}</code></pre>`
-        }
-      }
-    }
   }
 }
 

@@ -1,7 +1,28 @@
-.colorBlock {
-  color: white;
+.colorBlock,
+.colorBlock__col {
+  display: inline-block;
+  width: calc(24% - #{quarter($space)});
+  color: rgba(255,255,255,.7);
   border-radius: 4px;
   padding: halve($space) $space;
-  margin: quarter($space);
+  margin-bottom: halve($space);
+  margin-right: quarter($space);
   text-align: left;
+  overflow: hidden;
+
+  &:nth-of-type(4n + 0) {
+    margin-right: 0;
+  }
+}
+
+.colorBlock__name {
+  color: white;
+}
+
+.colorBlock__col {
+  padding: 0;
+}
+.colorBlock__row {
+  padding: halve($space) $space;
+  width: 100%;
 }
