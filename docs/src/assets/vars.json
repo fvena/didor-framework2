@@ -1,113 +1,31 @@
 {
-  "brand": [
-    {
-      "name": "brand",
-      "valueHex": "#2badc4",
-      "valueRGBA": "rgba(43,173,196,1)"
+  "colors": {
+    "brand": {
+      "brand": "#2badc4",
+      "brand-dark": "#269baf",
+      "brand-light": "#36bbd3",
+      "teal": "#00bfa5",
+      "teal-dark": "#00a68f",
+      "teal-light": "#00d9bb",
+      "purple": "#6d5cae",
+      "purple-dark": "#6150a1",
+      "purple-light": "#7c6db6"
     },
-    {
-      "name": "brand-dark",
-      "valueHex": "#269baf",
-      "valueRGBA": "rgba(38,155,175,1)"
+    "gray": {
+      "black": "#000000",
+      "gray1": "#34495e",
+      "gray2": "#555555",
+      "gray3": "#777777",
+      "gray4": "#999999",
+      "gray5": "#cccccc",
+      "gray6": "#d5d5d5",
+      "white": "#ffffff"
     },
-    {
-      "name": "brand-light",
-      "valueHex": "#36bbd3",
-      "valueRGBA": "rgba(54,187,211,1)"
-    },
-    {
-      "name": "teal",
-      "valueHex": "#00bfa5",
-      "valueRGBA": "rgba(0,191,165,1)"
-    },
-    {
-      "name": "teal-dark",
-      "valueHex": "#00a68f",
-      "valueRGBA": "rgba(0,166,143,1)"
-    },
-    {
-      "name": "teal-light",
-      "valueHex": "#00d9bb",
-      "valueRGBA": "rgba(0,217,187,1)"
-    },
-    {
-      "name": "purple",
-      "valueHex": "#6d5cae",
-      "valueRGBA": "rgba(109,92,174,1)"
-    },
-    {
-      "name": "purple-dark",
-      "valueHex": "#6150a1",
-      "valueRGBA": "rgba(97,80,161,1)"
-    },
-    {
-      "name": "purple-light",
-      "valueHex": "#7c6db6",
-      "valueRGBA": "rgba(124,109,182,1)"
+    "notify": {
+      "success": "#67c23a",
+      "warning": "#e6a23c",
+      "danger": "#f56c6c",
+      "info": "#909399"
     }
-  ],
-  "gray": [
-    {
-      "name": "black",
-      "valueHex": "#000000",
-      "valueRGBA": "rgba(0,0,0,1)"
-    },
-    {
-      "name": "gray1",
-      "valueHex": "#34495e",
-      "valueRGBA": "rgba(52,73,94,1)"
-    },
-    {
-      "name": "gray2",
-      "valueHex": "#555555",
-      "valueRGBA": "rgba(85,85,85,1)"
-    },
-    {
-      "name": "gray3",
-      "valueHex": "#777777",
-      "valueRGBA": "rgba(119,119,119,1)"
-    },
-    {
-      "name": "gray4",
-      "valueHex": "#999999",
-      "valueRGBA": "rgba(153,153,153,1)"
-    },
-    {
-      "name": "gray5",
-      "valueHex": "#cccccc",
-      "valueRGBA": "rgba(204,204,204,1)"
-    },
-    {
-      "name": "gray6",
-      "valueHex": "#d5d5d5",
-      "valueRGBA": "rgba(213,213,213,1)"
-    },
-    {
-      "name": "white",
-      "valueHex": "#ffffff",
-      "valueRGBA": "rgba(255,255,255,1)"
-    }
-  ],
-  "notify": [
-    {
-      "name": "success",
-      "valueHex": "#67c23a",
-      "valueRGBA": "rgba(103,194,58,1)"
-    },
-    {
-      "name": "warning",
-      "valueHex": "#e6a23c",
-      "valueRGBA": "rgba(230,162,60,1)"
-    },
-    {
-      "name": "danger",
-      "valueHex": "#f56c6c",
-      "valueRGBA": "rgba(245,108,108,1)"
-    },
-    {
-      "name": "info",
-      "valueHex": "#909399",
-      "valueRGBA": "rgba(144,147,153,1)"
-    }
-  ]
+  }
 }

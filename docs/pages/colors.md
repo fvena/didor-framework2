@@ -4,7 +4,6 @@
 
 Los colores principales son utilizados para elementos que deban reflejar la identidad de la marca. Cada color tiene una variante más clara y más oscura.
 
-
 colors[brand]>
 
 ## Colores grises

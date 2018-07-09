@@ -12,24 +12,36 @@ function loadJSON(file) {
   });
 }
 
-function colorsIframe(colors, family){
-  var content = '';
+function colorsDemo(colors, family){
+  var content = '<div class="colors-demos">';
+
   if (family === 'brand'){
     for (var color in colors) {
-      if (!colors[color].name.endsWith('-dark') && !colors[color].name.endsWith('-light')) {
+      var value = colors[color];
+
+      if (!color.endsWith('-dark') && !color.endsWith('-light')) {
+        var dark = color + '-dark';
+        var light = color + '-light';
+
         content += `
-          <div class='colorBlock__col'>
-            <div class='colorBlock__row bg-${colors[color].name}-light'>
-              <div class='colorBlock__name'>${colors[color].name}-light</div>
-              ${colors[color].valueHex}
+          <div class="colorBlock__col">
+            <div class="colorBlock" style="background-color: ${colors[light]}" onclick="copyToClipboard('brand(${light})');">
+              <div class="colorBlock__name">
+                ${light}
+                <div class="colorBlock__hex">${colors[light]}</div>
+              </div>
             </div>
-            <div class='colorBlock__row bg-${colors[color].name}'>
-              <div class='colorBlock__name'>${colors[color].name}</div>
-              ${colors[color].valueHex}
+            <div class="colorBlock" style="background-color: ${value}" onclick="copyToClipboard('brand(${color})');">
+              <div class="colorBlock__name">
+                ${color}
+                <div class="colorBlock__hex">${value}</div>
+              </div>
             </div>
-            <div class='colorBlock__row bg-${colors[color].name}-dark'>
-              <div class='colorBlock__name'>${colors[color].name}-dark</div>
-              ${colors[color].valueHex}
+            <div class="colorBlock" style="background-color: ${colors[dark]}" onclick="copyToClipboard('brand(${dark})');">
+              <div class="colorBlock__name">
+                ${dark}
+                <div class="colorBlock__hex">${colors[dark]}</div>
+              </div>
             </div>
           </div>
         `;
@@ -37,44 +49,42 @@ function colorsIframe(colors, family){
     }
   } else {
     for (var color in colors) {
+      var value = colors[color];
+
       content += `
-        <div class='colorBlock bg-${colors[color].name}'>
-          <div class='colorBlock__name'>${colors[color].name}</div>
-          ${colors[color].valueHex}<br>
-          ${colors[color].valueRGBA}
+        <div class="colorBlock__col">
+          <div class="colorBlock" style="background-color: ${value}" onclick="copyToClipboard('${family}(${color})');">
+            <div class="colorBlock__name">
+              ${color}
+              <div class="colorBlock__hex">${value}</div>
+            </div>
+          </div>
         </div>
       `;
     }
   }
 
+  content += '</div>';
 
-  var title = 'Demo colors';
-  var stylesheet = `<link rel='stylesheet' href='src/stylesheets/didor.css'>`;
-  var srcdoc = `
-    <head>
-      <title>${title}</title>
-      ${stylesheet}
-    </head>
-    <body style='background-color: #FAFAFA !important'>
-      ${content}
-    </body>
-  `;
-  var iframe = `<iframe srcdoc="${srcdoc}" class="demoContainer" scrolling="no" frameborder="0" height="auto" onload="autoResize(this)"></iframe>`;
 
-  return iframe;
+  return content.replace(/\n/g, "")
+    .replace(/[\t ]+\</g, "<")
+    .replace(/\>[\t ]+\</g, "><")
+    .replace(/\>[\t ]+$/g, ">")
 }
 
 
 async function install (hook, vm) {
-  var colors = await loadJSON('/src/assets/vars.json');
+  const varSass = await loadJSON('/src/assets/vars.json');
 
   hook.beforeEach(function (content) {
     const reg = /^colors\[(.*)+?\]\>$/gm;
-    var match = reg.exec(content);
+    const colors = varSass.colors;
+
+    let match = reg.exec(content);
 
     while (match != null) {
-      color = colorsIframe(colors[match[1]],match[1]);
-      content = content.replace(match[0], color);
+      content = content.replace(match[0], colorsDemo(colors[match[1]],match[1]));
       match = reg.exec(content);
     }
 

@@ -1,12 +1,12 @@
 .colorBlock,
 .colorBlock__col {
   display: inline-block;
-  width: calc(24% - #{quarter($space)});
+  width: calc(24% - #{halve($space)});
   color: rgba(255,255,255,.7);
   border-radius: 4px;
   padding: halve($space) $space;
   margin-bottom: halve($space);
-  margin-right: quarter($space);
+  margin-right: halve($space);
   text-align: left;
   overflow: hidden;
 

@@ -29,7 +29,7 @@ function resizeAllDemoIframes(){
 /*
  * Resize iframes to adapt its content
  */
-function autoResize(iframe){
+function autoResize(iframe) {
   setTimeout(function(){
     var body = iframe.contentWindow.document.body;
     var html = iframe.contentWindow.document.documentElement;
@@ -40,3 +40,16 @@ function autoResize(iframe){
     iframe.style.visibility = 'visible';
   }, 500);
 }
+
+
+function copyToClipboard(str) {
+  const el = document.createElement('textarea');
+  el.value = str;
+  el.setAttribute('readonly', '');
+  el.style.position = 'absolute';
+  el.style.left = '-9999px';
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+};
