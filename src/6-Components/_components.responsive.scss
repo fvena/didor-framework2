@@ -29,6 +29,11 @@
   }
 }
 
+.responsive--title-col {
+  th:first-of-type,
+  td:first-of-type { text-align: left; width: 150px; padding: quarter($space) halve($space); }
+}
+
 .responsive--back {
   position: absolute;
   top: 0;
@@ -69,4 +74,18 @@
 
 .responsive__block--disabled {
   background-color: gray(gray6);
+}
+
+
+.point {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  border: 1px solid #3a5169;
+}
+
+.point.point__fill {
+  border-color: #2badc4;
+  background-color: #2badc4;
 }

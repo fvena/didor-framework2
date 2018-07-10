@@ -1,0 +1,26 @@
+.iconBlock {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  vertical-align: top;
+  cursor: pointer;
+  position: relative;
+  padding: 10px 0;
+
+  &:hover {
+    .iconBlock__icon {
+      color: brand();
+    }
+  }
+}
+
+.iconBlock__icon {
+  height: 35px;
+  font-size: 35px;
+}
+
+.iconBlock__name {
+  font-size: 12px;
+  margin-top: 10px;
+  opacity: .7;
+}

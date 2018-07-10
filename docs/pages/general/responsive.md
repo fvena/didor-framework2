@@ -27,10 +27,10 @@ Al ser utilizados por el nucleo del framework, no se puede cambiar su nombre o a
 
 Nombre         | Tipo                           | Descripción                                                             | Defecto
 ---------------|--------------------------------|-------------------------------------------------------------------------|-------------
-`$palm`        | <div class="tag">size</div>    | Anchura máxima de pantalla para móviles                                 | `600px`
-`$lap`         | <div class="tag">size</div>    | Anchura máxima de pantalla para tablets en vertical                     | `900px`
-`$small`       | <div class="tag">size</div>    | Anchura máxima de pantalla para tablets en horizontal                   | `1200px`
-`$desk`        | <div class="tag">size</div>    | Anchura máxima de pantalla para portátiles                              | `1800px`
+`$palm`        | <div class="tagCode">size</div>    | Anchura máxima de pantalla para móviles                                 | `600px`
+`$lap`         | <div class="tagCode">size</div>    | Anchura máxima de pantalla para tablets en vertical                     | `900px`
+`$small`       | <div class="tagCode">size</div>    | Anchura máxima de pantalla para tablets en horizontal                   | `1200px`
+`$desk`        | <div class="tagCode">size</div>    | Anchura máxima de pantalla para portátiles                              | `1800px`
 
 <p class="small">Los valores por defecto, se han elegido agrupando los valores más comunes entre dispositivos ([ref][e02d6c98]).</p>
 

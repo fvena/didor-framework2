@@ -1,8 +1,10 @@
-* General
+* [Home](/)
 
-  * [Home](/)
-  * [Responsive](responsive.md)
-  * [Colores](colors.md)
+* General
+  * [Colores](general/colors.md)
+  * [Iconos](general/icons.md)
+  * [Responsive](general/responsive.md)
+  * [Visibilidad](general/visibility.md)
 
 * Customization
 

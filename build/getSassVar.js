@@ -23,6 +23,18 @@ function getColors(varSass) {
   return colors;
 }
 
+function getIcons(varSass) {
+  const icons = [];
+
+  for (var variable in varSass) {
+    if (variable.startsWith('$icon-')) {
+      icons.push(variable.substr(1));
+    }
+  }
+
+  return icons;
+}
+
 
 function writeJSON(file, data) {
   fs.writeFile(file, JSON.stringify(data, null, 2), (err) => {
@@ -36,13 +48,14 @@ function writeJSON(file, data) {
 
 
 sassExtract.render({
-  file: '../../src/2-Settings/_main.scss'
+  file: './src/didor.scss'
 })
 .then(rendered => {
   var varSass = rendered.vars.global;
   var vars = {};
 
   vars.colors = getColors(varSass);
+  vars.icons = getIcons(varSass);
 
-  writeJSON("./assets/vars.json", vars);
+  writeJSON("./docs/src/sassVar.json", vars);
 });

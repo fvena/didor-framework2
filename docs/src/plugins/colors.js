@@ -75,7 +75,7 @@ function colorsDemo(colors, family){
 
 
 async function install (hook, vm) {
-  const varSass = await loadJSON('/src/assets/vars.json');
+  const varSass = await loadJSON('/src/sassVar.json');
 
   hook.beforeEach(function (content) {
     const reg = /^colors\[(.*)+?\]\>$/gm;

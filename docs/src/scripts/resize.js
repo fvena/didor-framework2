@@ -1,21 +1,4 @@
 /*
- * Docsify Configuration
- */
-window.$docsify = {
-  auto2top: true,
-  basePath: './pages',
-  themeColor: '#2badc4',
-  formatUpdated: '{DD}/{MM} {HH}:{mm}',
-  loadSidebar: '_sidebar.md',
-  subMaxLevel: 2,
-  pagination: {
-    previousText: 'Anterior',
-    nextText: 'Siguiente',
-  }
-}
-
-
-/*
  * Resize all demo iframes to adapt its content
  */
 function resizeAllDemoIframes(){
@@ -40,16 +23,3 @@ function autoResize(iframe) {
     iframe.style.visibility = 'visible';
   }, 500);
 }
-
-
-function copyToClipboard(str) {
-  const el = document.createElement('textarea');
-  el.value = str;
-  el.setAttribute('readonly', '');
-  el.style.position = 'absolute';
-  el.style.left = '-9999px';
-  document.body.appendChild(el);
-  el.select();
-  document.execCommand('copy');
-  document.body.removeChild(el);
-};

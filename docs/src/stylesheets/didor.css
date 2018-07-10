@@ -1098,6 +1098,12 @@ pre {
         font-size: 27px;
         margin-bottom: calc(0.4rem + 3px); }
 
+.responsive--title-col th:first-of-type,
+.responsive--title-col td:first-of-type {
+  text-align: left;
+  width: 150px;
+  padding: 0.4rem 0.8rem; }
+
 .responsive--back {
   position: absolute;
   top: 0;
@@ -1133,30 +1139,36 @@ pre {
 .responsive__block--disabled {
   background-color: #d5d5d5; }
 
-.colorBlock,
-.colorBlock__col {
+.point {
   display: inline-block;
-  width: calc(24% - 0.8rem);
-  color: rgba(255, 255, 255, 0.7);
-  border-radius: 4px;
-  padding: 0.8rem 1.6rem;
-  margin-bottom: 0.8rem;
-  margin-right: 0.8rem;
-  text-align: left;
-  overflow: hidden; }
-  .colorBlock:nth-of-type(4n + 0),
-  .colorBlock__col:nth-of-type(4n + 0) {
-    margin-right: 0; }
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  border: 1px solid #3a5169; }
 
-.colorBlock__name {
-  color: white; }
+.point.point__fill {
+  border-color: #2badc4;
+  background-color: #2badc4; }
 
-.colorBlock__col {
-  padding: 0; }
+.iconBlock {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  vertical-align: top;
+  cursor: pointer;
+  position: relative;
+  padding: 10px 0; }
+  .iconBlock:hover .iconBlock__icon {
+    color: #2badc4; }
 
-.colorBlock__row {
-  padding: 0.8rem 1.6rem;
-  width: 100%; }
+.iconBlock__icon {
+  height: 35px;
+  font-size: 35px; }
+
+.iconBlock__name {
+  font-size: 12px;
+  margin-top: 10px;
+  opacity: .7; }
 
 /**
  * HELPERS
