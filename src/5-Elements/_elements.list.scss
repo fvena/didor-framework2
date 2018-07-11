@@ -31,7 +31,7 @@ dl {
     }
   }
 
-  dt { font-weight: font($body-type, bold); }
+  dt { font-weight: font($body-type, regular); }
 
   dd + dt { padding-top: 1rem; }
 }

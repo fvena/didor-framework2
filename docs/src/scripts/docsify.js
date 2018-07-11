@@ -4,10 +4,12 @@
 window.$docsify = {
   auto2top: true,
   basePath: './pages',
-  themeColor: '#2badc4',
+  logo: '../src/assets/logo.svg',
+  name: 'Documentación',
   formatUpdated: '{DD}/{MM} {HH}:{mm}',
-  loadSidebar: '_sidebar.md',
-  subMaxLevel: 2,
+  loadNavbar: true,
+  loadSidebar: true,
+  mergeNavbar: true,
   pagination: {
     previousText: 'Anterior',
     nextText: 'Siguiente',

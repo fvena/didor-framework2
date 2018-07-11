@@ -5,7 +5,7 @@
 // sass-lint:disable no-url-domains, no-url-protocols
 
 // Importa tus fuentes aquí
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,800');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400|Roboto+Mono:300');
 
 
 // Añade una lista con cada fuente que quieras utilizar.
@@ -30,22 +30,19 @@
 //
 
 $body-type: (
-  font-family: '"Montserrat", sans-serif',
-  light: 300,
-  regular: 400,
-  medium: 500,
-  bold: 700,
-  extrabold: 800
+  font-family: '"Source Sans Pro", Helvetica Neue, Arial, sans-serif',
+  regular: 300,
+  bold: 400,
 ) !default;
 
 $heading-type: (
-  font-family: '"Montserrat", sans-serif',
-  regular: 700
+  font-family: '"Source Sans Pro", Helvetica Neue, Arial, sans-serif',
+  bold: 300
 ) !default;
 
 $monospace-type: (
-  font-family: '"Menlo", monospace',
-  regular: 400
+  font-family: '"Roboto Mono", Monaco, courier, monospace',
+  regular: 300
 ) !default;
 
 
@@ -54,10 +51,10 @@ $monospace-type: (
 // !Importante! Asegurate de que los nombres coincidan con los que has usado en
 // _settings.responsive.
 $root-sizes: (
-  palm:  14,
-  lap:   14,
-  desk:  17,
-  large: 17,
+  palm:  15,
+  lap:   16,
+  desk:  18,
+  large: 18,
 ) !default;
 
 
@@ -68,7 +65,7 @@ $base-line-height: 1.6;
 
 
 // Escala para crear los tamaños de texto proporcionalmente
-$scale: 1.15;
+$scale: 1.175;
 
 
 

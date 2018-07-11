@@ -9,14 +9,19 @@ $base-background-color:   gray(white);
 $base-text-color:         gray(gray2);
 $base-link-color:         brand();
 $base-link-color-dark:    brand();
-$base-heading-color:      gray(gray1);
 $caption-colour:          gray(gray4);
-$code-background-colour:  gray(white);
+$code-background-colour:  gray(gray6);
+
+// Heading
+$base-heading-color:      gray(gray1);
+$base-heading-family:     font($heading-type, font-family);
+$base-heading-weight:     font($heading-type, bold);
+
 
 $border-radius: 5px !default;
-$border-color: #eaeaea;
+$border-color: gray(gray4);
 
 $gutter: $space !default;
 $grid-columns: 12 !default;
 
-$wrappers: 1440px;
+$base-wrappers-width: 800px;

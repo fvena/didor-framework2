@@ -18,7 +18,7 @@ function autoResize(iframe) {
     var html = iframe.contentWindow.document.documentElement;
     var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
     iframe.style.visibility = 'hidden';
-    iframe.style.height = '10px'; // reset to minimal height in case going from longer to shorter doc
+    iframe.style.height = '150px'; // reset to minimal height in case going from longer to shorter doc
     iframe.style.height = height + 5 + 'px';
     iframe.style.visibility = 'visible';
   }, 500);

@@ -1,0 +1,84 @@
+// Título del sidebar
+.app-name-link {
+  display: block;
+
+  img {
+    width: 60px;
+    display: block;
+    margin: $space auto halve($space);
+  }
+
+  &:after {
+    content: 'Documentación';
+    display: block;
+    @include fontsize(iota);
+    color: gray(gray2);
+    font-family: $base-heading-family;
+    font-weight: $base-heading-weight;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: double($space);
+    text-align: center;
+  }
+}
+
+// Menú de navegación del sidebar
+.sidebar-nav {
+  li {
+    margin: 0;
+    list-style: none;
+  }
+
+  li > a {
+    @include fontsize(eta);
+    display: block;
+    color: gray(gray2);
+    padding: 0.15rem 0;
+
+    &:hover {
+      color: gray(gray1);
+    }
+  }
+
+  li.active a {
+    color: gray(gray1);
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0rem;
+      left: -$space;
+      height: 100%;
+      width: calc(100% + #{double($space)});
+      background-color: gray(gray6);
+      border-right: 3px solid brand();
+      z-index: -1;
+    }
+  }
+
+  ul > li > p {
+    @include fontsize(theta);
+    color: gray(gray1);
+    font-weight: font($body-type, bold);
+    text-transform: uppercase;
+    padding-bottom: quarter($space);
+    margin-bottom: 0;
+    border-bottom: 1px solid $border-color;
+  }
+
+  ul > li > ul {
+    margin-bottom: $space;
+  }
+}
+
+@include media(screen) {
+  .sidebar-nav {
+    padding: 0 halve($space);
+
+    li.active a:after {
+      left: -(triple($space) / 2);
+      width: calc(100% + #{triple($space)});
+    }
+  }
+}

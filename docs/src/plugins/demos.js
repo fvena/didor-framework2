@@ -6,7 +6,7 @@ function demoIframe(code){
       <title>${title}</title>
       ${stylesheet}
     </head>
-    <body style='background-color: #FAFAFA !important'>
+    <body style='background-color: #FCFCFC !important;'>
       ${code}
     </body>
   `;

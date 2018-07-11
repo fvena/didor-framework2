@@ -6,7 +6,17 @@
  * within this layer.
  */
 
+@import 'components.layout';
+@import 'components.docsify';
+@import 'components.header';
+@import 'components.sidebar';
+@import 'components.markdown';
+@import 'components.token';
+@import 'components.cover';
+
+@import 'components.code';
 @import 'components.icons';
 @import 'components.typeset';
 @import 'components.responsive';
+@import 'components.colorBlock';
 @import 'components.iconsBlock';

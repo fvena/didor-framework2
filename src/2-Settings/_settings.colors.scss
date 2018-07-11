@@ -4,35 +4,47 @@
 
 // Colores de marca
 $color-brand-map: (
-  brand:        #2badc4,
-  brand-dark:   darken(#2badc4, 5%),
-  brand-light:  lighten(#2badc4, 5%),
-  teal:         #00bfa5,
-  teal-dark:    darken(#00bfa5, 5%),
-  teal-light:   lighten(#00bfa5, 5%),
-  purple:       #6d5cae,
-  purple-dark:  darken(#6d5cae, 5%),
-  purple-light: lighten(#6d5cae, 5%)
+  brand:            #28A2B8,
+  brand-dark:       #238C9E,
+  brand-light:      #4BBDD1,
+  Aquamarina:       #61AFA9,
+  Aquamarina-dark:  darken(#61AFA9, 10%),
+  Aquamarina-light: lighten(#61AFA9, 10%),
+  purple:           #888597,
+  purple-dark:      darken(#888597, 10%),
+  purple-light:     lighten(#888597, 10%),
+  pink:             #ED6673,
+  pink-dark:        darken(#ED6673, 10%),
+  pink-light:       lighten(#ED6673, 10%),
+  red:              #FF715B,
+  red-dark:         darken(#FF715B, 10%),
+  red-light:        lighten(#FF715B, 10%),
+  yellow:           #FAC05E,
+  yellow-dark:      darken(#FAC05E, 10%),
+  yellow-light:     lighten(#FAC05E, 10%),
+  green:            #A2BE97,
+  green-dark:       darken(#A2BE97, 10%),
+  green-light:      lighten(#A2BE97, 10%)
 ) !default;
 
 
 // Colores escala de grises
 $color-gray-map: (
   black: #000000,
-  gray1: #34495e,
-  gray2: #555555,
-  gray3: #777777,
-  gray4: #999999,
-  gray5: #cccccc,
-  gray6: #d5d5d5,
-  white: #ffffff
+  gray1: #3B4C53,
+  gray2: #7C868B,
+  gray3: #9DA6AA,
+  gray4: #CFD6DA,
+  gray5: #E7EBEE,
+  gray6: #F5F6F8,
+  white: #FFFFFF
 ) !default;
 
 
 // Colores para notificaciones
 $color-notify-map: (
-  success: #67c23a,
-  warning: #e6a23c,
-  danger:  #f56c6c,
-  info:    #909399
+  success: #A2BE97,
+  warning: #FAC05E,
+  danger:  #ED6673,
+  info:    #9DA6AA
 ) !default;

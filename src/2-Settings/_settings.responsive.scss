@@ -41,7 +41,7 @@ $breakpointsDeskFirst: (
   portrait:  'screen and (max-width: #{px2em($lap - 1)})',
   landscape: 'screen and (min-width: #{px2em($lap)})',
   touch:     'screen and (max-width: #{px2em($small - 1)})',
-  monitor:   'screen and (min-width: #{px2em($small)})',
+  screen:   'screen and (min-width: #{px2em($small)})',
   tablet:    'screen and (min-width: #{px2em($palm)}) and (max-width: #{px2em($small - 1)})'
 );
 
@@ -61,7 +61,7 @@ $breakpointsMobileFirst: (
   portrait:  'screen and (max-width: #{px2em($lap - 1)})',
   landscape: 'screen and (min-width: #{px2em($lap)})',
   touch:     'screen and (max-width: #{px2em($small - 1)})',
-  monitor:   'screen and (min-width: #{px2em($small)})',
+  screen:   'screen and (min-width: #{px2em($small)})',
   tablet:    'screen and (min-width: #{px2em($palm)}) and (max-width: #{px2em($small - 1)})'
 );
 

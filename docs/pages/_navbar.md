@@ -14,7 +14,3 @@
   * [Component2](guide.md)
   * [Component3](guide.md)
   * [Component4](guide.md)
-
-* Utilidades
-
-  * [Visibilidad](utility/visibility.md)

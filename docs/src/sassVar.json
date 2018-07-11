@@ -1,31 +1,43 @@
 {
   "colors": {
     "brand": {
-      "brand": "#2badc4",
-      "brand-dark": "#269baf",
-      "brand-light": "#36bbd3",
-      "teal": "#00bfa5",
-      "teal-dark": "#00a68f",
-      "teal-light": "#00d9bb",
-      "purple": "#6d5cae",
-      "purple-dark": "#6150a1",
-      "purple-light": "#7c6db6"
+      "brand": "#28a2b8",
+      "brand-dark": "#238c9e",
+      "brand-light": "#4bbdd1",
+      "Aquamarina": "#61afa9",
+      "Aquamarina-dark": "#53a49d",
+      "Aquamarina-light": "#72b8b2",
+      "purple": "#888597",
+      "purple-dark": "#7b778b",
+      "purple-light": "#9593a3",
+      "pink": "#ed6673",
+      "pink-dark": "#ea4f5e",
+      "pink-light": "#f07d88",
+      "red": "#ff715b",
+      "red-dark": "#ff5b42",
+      "red-light": "#ff8774",
+      "yellow": "#fac05e",
+      "yellow-dark": "#f9b645",
+      "yellow-light": "#fbca77",
+      "green": "#a2be97",
+      "green-dark": "#94b487",
+      "green-light": "#b0c8a7"
     },
     "gray": {
       "black": "#000000",
-      "gray1": "#34495e",
-      "gray2": "#555555",
-      "gray3": "#777777",
-      "gray4": "#999999",
-      "gray5": "#cccccc",
-      "gray6": "#d5d5d5",
-      "white": "#ffffff"
+      "gray1": "#3b4c53",
+      "gray2": "#7c868b",
+      "gray3": "#9da6aa",
+      "gray4": "#cfd6da",
+      "gray5": "#e7ebee",
+      "gray6": "#f5f6f8",
+      "white": "#fafafb"
     },
     "notify": {
-      "success": "#67c23a",
-      "warning": "#e6a23c",
-      "danger": "#f56c6c",
-      "info": "#909399"
+      "success": "#a2be97",
+      "warning": "#fac05e",
+      "danger": "#ed6673",
+      "info": "#9da6aa"
     }
   },
   "icons": [

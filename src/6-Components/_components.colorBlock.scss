@@ -1,0 +1,52 @@
+.colors-demos {}
+
+.colorBlock__col {
+  display: inline-block;
+  width: calc(25% - 24px);
+  margin-bottom: 12px;
+  margin-right: 23px;
+  text-align: left;
+  overflow: hidden;
+  border-radius: 4px;
+
+  &:nth-of-type(4n + 0) {
+    margin-right: 0;
+  }
+}
+
+.colorBlock {
+  color: white;
+  height: 80px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.colorBlock:hover .colorBlock__name { opacity: 0; }
+.colorBlock:hover:before { opacity: 1; }
+
+.colorBlock__hex {
+  opacity: .7;
+  margin-top: -9px;
+}
+
+.colorBlock:before,
+.colorBlock__name {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  padding: 0 15px;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  transition: opacity .5s;
+}
+
+.colorBlock:before {
+  content:'Copiar Variable';
+  opacity: 0;
+  box-sizing: border-box;
+}

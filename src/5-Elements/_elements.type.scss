@@ -11,9 +11,9 @@ h4,
 h5,
 h6 {
   color: $base-heading-color;
-  font-family: font($heading-type, font-family);
+  font-family: $base-heading-family;
   font-style: normal;
-  font-weight: font($heading-type, regular);
+  font-weight: $base-heading-weight;
 }
 
 // Heading level 1.
@@ -78,7 +78,7 @@ small,
   @include fontsize(theta);
   font-family: font($heading-type, font-family);
   font-style: normal;
-  font-weight: font($heading-type, regular);
+  font-weight: font($heading-type, bold);
 }
 
 small {
@@ -135,6 +135,21 @@ pre {
   white-space: pre-wrap;
   word-wrap: break-word;
   word-break: break-all;
+
+  &:after {
+    color: gray(gray2);
+    content: attr(data-lang);
+    font-size: .6rem;
+    height: 15px;
+    line-height: 15px;
+    padding: 5px 10px 0;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
 }
 
 code {
