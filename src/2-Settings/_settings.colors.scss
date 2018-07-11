@@ -4,47 +4,47 @@
 
 // Colores de marca
 $color-brand-map: (
-  brand:            #28A2B8,
-  brand-dark:       #238C9E,
-  brand-light:      #4BBDD1,
-  Aquamarina:       #61AFA9,
-  Aquamarina-dark:  darken(#61AFA9, 10%),
-  Aquamarina-light: lighten(#61AFA9, 10%),
+  brand:            #28a2b8,
+  brand-dark:       #238c9e,
+  brand-light:      #4bbdd1,
+  Aquamarina:       #61afa9,
+  Aquamarina-dark:  darken(#61afa9, 10%),
+  Aquamarina-light: lighten(#61afa9, 10%),
   purple:           #888597,
   purple-dark:      darken(#888597, 10%),
   purple-light:     lighten(#888597, 10%),
-  pink:             #ED6673,
-  pink-dark:        darken(#ED6673, 10%),
-  pink-light:       lighten(#ED6673, 10%),
-  red:              #FF715B,
-  red-dark:         darken(#FF715B, 10%),
-  red-light:        lighten(#FF715B, 10%),
-  yellow:           #FAC05E,
-  yellow-dark:      darken(#FAC05E, 10%),
-  yellow-light:     lighten(#FAC05E, 10%),
-  green:            #A2BE97,
-  green-dark:       darken(#A2BE97, 10%),
-  green-light:      lighten(#A2BE97, 10%)
+  pink:             #ed6673,
+  pink-dark:        darken(#ed6673, 10%),
+  pink-light:       lighten(#ed6673, 10%),
+  red:              #ff715b,
+  red-dark:         darken(#ff715b, 10%),
+  red-light:        lighten(#ff715b, 10%),
+  yellow:           #fac05e,
+  yellow-dark:      darken(#fac05e, 10%),
+  yellow-light:     lighten(#fac05e, 10%),
+  green:            #a2be97,
+  green-dark:       darken(#a2be97, 10%),
+  green-light:      lighten(#a2be97, 10%)
 ) !default;
 
 
 // Colores escala de grises
 $color-gray-map: (
   black: #000000,
-  gray1: #3B4C53,
-  gray2: #7C868B,
-  gray3: #9DA6AA,
-  gray4: #CFD6DA,
-  gray5: #E7EBEE,
-  gray6: #F5F6F8,
-  white: #FFFFFF
+  gray1: #3b4c53,
+  gray2: #6f777b,
+  gray3: #9da6aa,
+  gray4: #cfd6da,
+  gray5: #e7ebee,
+  gray6: #f5f6f8,
+  white: #ffffff
 ) !default;
 
 
 // Colores para notificaciones
 $color-notify-map: (
-  success: #A2BE97,
-  warning: #FAC05E,
-  danger:  #ED6673,
-  info:    #9DA6AA
+  success: #a2be97,
+  warning: #fac05e,
+  danger:  #ed6673,
+  info:    #9da6aa
 ) !default;

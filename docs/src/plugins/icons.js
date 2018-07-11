@@ -1,31 +1,24 @@
 function iconsDemo(icons){
-  var title = 'Demo code';
-  var stylesheet = `<link rel='stylesheet' href='src/stylesheets/didor.css'>`;
-  var content = '';
+  var content = '<div class="icons-demo">';
 
   for (var icon in icons) {
     content += `
-      <div class='iconBlock'>
-        <div class='iconBlock__icon'>
-          <i class='${icons[icon]}'></i>
+      <div class="iconBlock" onclick="copyToClipboard('<i class=&quot;${icons[icon]}&quot;></i>');">
+        <div class="iconBlock__icon">
+          <i class="${icons[icon]}"></i>
         </div>
-        <div class='iconBlock__name'>.${icons[icon]}</div>
+        <div class="iconBlock__name">.${icons[icon]}</div>
       </div>
     `;
   }
 
-  var srcdoc = `
-    <head>
-      <title>${title}</title>
-      ${stylesheet}
-    </head>
-    <body style='background-color: #FAFAFA !important'>
-      ${content}
-    </body>
-  `;
-  var iframe = `<iframe srcdoc="${srcdoc}" class="demoContainer" scrolling="no" frameborder="0" height="auto" onload="autoResize(this)"></iframe>`;
+  content += '</div>';
 
-  return iframe;
+
+  return content.replace(/\n/g, "")
+    .replace(/[\t ]+\</g, "<")
+    .replace(/\>[\t ]+\</g, "><")
+    .replace(/\>[\t ]+$/g, ">")
 }
 
 async function install (hook, vm) {

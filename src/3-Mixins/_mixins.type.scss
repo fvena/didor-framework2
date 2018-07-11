@@ -17,7 +17,7 @@
   $base-breakpoints: desk;
 
   // Compruebo si es mobile first
-  @if ($mobileFirst) {
+  @if ($mobile-first) {
     $base-breakpoints: palm;
   }
 
@@ -65,7 +65,7 @@
   @else {
     @if map-has-key($scale-level, $fontsize) {
       $level: map-get($scale-level, $fontsize);
-      $module: pow($scale, $level);
+      $module: pow($modular-scale, $level);
 
       font-size: #{$module}rem;
       line-height: #{ceil(($module * 2.5) / $space) * ($space / 2)}rem;

@@ -35,10 +35,7 @@ rules:
   no-invalid-hex: 1
   no-mergeable-selectors: 1
   no-misspelled-properties: 1
-  no-qualifying-elements:
-    - 1
-    -
-      allow-element-with-attribute: true
+  no-qualifying-elements: 0
   no-trailing-whitespace: 1
   no-trailing-zero: 1
   no-transition-all: 1
@@ -56,7 +53,7 @@ rules:
   force-pseudo-nesting: 0
 
   # Name Formats
-  class-name-format: 1
+  class-name-format: 0
   function-name-format: 1
   id-name-format: 0
   mixin-name-format: 1
@@ -71,6 +68,7 @@ rules:
     - 1
     -
       style: 'stroustrup'
+      allow-single-line: true
   clean-import-paths: 1
   empty-args: 1
   hex-length:

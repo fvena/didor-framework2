@@ -1,8 +1,7 @@
 .markdown-section {
-  margin: 0 auto;
   max-width: $base-wrappers-width;
+  margin: 0 auto;
   padding: 0 $space;
-  color: gray(gray1);
 }
 
 .markdown-section h1,
@@ -11,7 +10,7 @@
 .markdown-section h4,
 .markdown-section h5,
 .markdown-section h6 {
-  a { color: gray(black); }
+  a { color: $base-heading-color; }
 }
 
 .markdown-section h2 {
@@ -19,406 +18,118 @@
   position: relative;
 
   &:before {
-    content: '#';
-    color: gray(gray3);
     position: absolute;
     left: -$space;
+    color: gray(gray3);
+    content: '#';
   }
 }
 
 
 .markdown-section hr {
-  border: none;
+  margin: 2em 0;
+  border: 0;
   border-bottom: 1px solid $border-color;
-  margin: 2em 0
 }
 
 .markdown-section table {
-  display: block;
+  margin: $space 0 double($space);
   overflow: auto;
-  width: 100%;
+
+  tr { border-bottom: 1px solid $border-color; }
+
+  td {
+    @include fontsize(eta);
+    padding: halve($space);
+    font-weight: font($body-type, regular);
+  }
+
+  th {
+    @include fontsize(theta);
+    padding: halve($space) halve($space) quarter($space);
+    color: gray(gray2);
+    font-weight: font($body-type, bold);
+    text-transform: uppercase;
+  }
+}
+
+.markdown-section pre {
+  margin: double($space) 0;
+}
+
+.markdown-section p.tip,
+.markdown-section p.warn {
+  position: relative;
+  margin: double($space) 0;
+  padding: halve($space) $space;
+  background-color: gray(gray6);
+
+  &:before {
+    position: absolute;
+    top: 10px;
+    left: -12px;
+    width: 20px;
+    height: 20px;
+    border-radius: halve($space);
+    color: gray(white);
+    font-size: 14px;
+    font-weight: font($body-type, bold);
+    line-height: 20px;
+    text-align: center;
+  }
+
+  code { background-color: gray(gray5); }
+  em { color: gray(gray1); }
 }
 
 .markdown-section p.tip {
-  border-bottom-right-radius: 2px;
-  border-left: 4px solid #f66;
-  border-top-right-radius: 2px;
-  margin: 2em 0;
-  padding: 12px 24px 12px 30px;
-  position: relative;
-  background-color: #f8f8f8;
+  background-color: transparentize(brand(), .8);
+  // border-left: 4px solid brand();
 
-  &:before {
-    background-color: #f66;
-    border-radius: 100%;
-    color: #fff;
-    content: "!";
-    font-family: Dosis, Source Sans Pro, Helvetica Neue, Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    left: -12px;
-    line-height: 20px;
-    position: absolute;
-    height: 20px;
-    width: 20px;
-    text-align: center;
-    top: 14px
-  }
-
-  code { background-color: #efefef; }
-  em { color: #34495e; }
+  // &:before {
+  //   content: '\1D4F2';
+  //   background-color: brand();
+  // }
 }
 
 .markdown-section p.warn {
-  background: rgba(66, 185, 131, .1);
-  border-radius: 2px;
-  padding: 1rem
+  border-left: 4px solid notify(danger);
+
+  &:before {
+    background-color: notify(danger);
+    content: '!';
+  }
 }
 
 .markdown-section strong {
-  color: #2c3e50;
-  font-weight: 600
+  color: gray(gray1);
+  font-weight: font($body-type, bold);
+}
+
+.markdown-section em {
+  color: gray(gray1);
 }
 
 .markdown-section blockquote {
-  border-left: 4px solid var(--theme-color, #42b983);
-  color: #858585;
-  margin: 2em 0;
-  padding-left: 20px
+  margin: double($space) 0;
+  padding-left: $space;
+  border-left: 4px solid brand();
+  color: gray(gray3);
 }
 
-.markdown-section blockquote p {
-  font-weight: 600;
-  margin-left: 0
+.markdown-section .demoContainer {
+  width: 1px;
+  min-width: 100%;
+  border: 0;
 }
 
-// .markdown-section code {
-//   border-radius: 2px;
-//   color: #e96900;
-//   font-size: .8rem;
-//   margin: 0 2px;
-//   padding: 3px 5px;
-//   white-space: pre-wrap
-// }
-//
-// .markdown-section code,
-// .markdown-section pre {
-//   background-color: #f8f8f8;
-//   font-family: Roboto Mono, Monaco, courier, monospace
-// }
-//
-// .markdown-section pre {
-//   -moz-osx-font-smoothing: initial;
-//   -webkit-font-smoothing: initial;
-//   line-height: 1.5rem;
-//   margin: 1.2em 0;
-//   overflow: auto;
-//   padding: 0 1.4rem;
-//   position: relative;
-//   word-wrap: normal
-// }
-//
-//
-// .markdown-section pre>code {
-//   -moz-osx-font-smoothing: initial;
-//   -webkit-font-smoothing: initial;
-//   background-color: #f8f8f8;
-//   border-radius: 2px;
-//   color: #525252;
-//   display: block;
-//   font-family: Roboto Mono, Monaco, courier, monospace;
-//   font-size: .8rem;
-//   line-height: inherit;
-//   margin: 0 2px;
-//   max-width: inherit;
-//   overflow: inherit;
-//   padding: 2.2em 5px;
-//   white-space: inherit
-// }
-//
-// .markdown-section code:after, .markdown-section code:before {
-//   letter-spacing: .05rem
-// }
-//
-// code .token {
-//   -moz-osx-font-smoothing: initial;
-//   -webkit-font-smoothing: initial;
-//   min-height: 1.5rem
-// }
-//
-// pre:after {
-//   color: #ccc;
-//   content: attr(data-lang);
-//   font-size: .6rem;
-//   font-weight: 600;
-//   height: 15px;
-//   line-height: 15px;
-//   padding: 5px 10px 0;
-//   position: absolute;
-//   right: 0;
-//   text-align: right;
-//   top: 0
-// }
-//
-// .markdown-section code,
-// .markdown-section pre,
-// .markdown-section pre>code,
-// .markdown-section p.tip {
-//   background-color: #F1F1F1;
-// }
-//
-// .markdown-section code { color: #2badc4; }
-//
-// pre:after {
-//   text-transform: uppercase;
-//   color: #9fa8a9;
-//   font-weight: inherit;
-//   letter-spacing: 0.08em;
-// }
+@include media(large) {
+  .markdown-section {
+    max-width: $base-wrappers-width-large;
+  }
+}
 
-// .markdown-section {
-//   margin: 0 auto;
-//   max-width: 800px;
-//   padding: 30px 15px 40px;
-//   position: relative
-// }
-//
-// .markdown-section>:first-child {
-//   margin-top: 0 !important
-// }
-//
-// .markdown-section hr {
-//   border: none;
-//   border-bottom: 1px solid #eee;
-//   margin: 2em 0
-// }
-//
-// .markdown-section iframe {
-//   border: 1px solid #eee
-// }
-//
-// .markdown-section table {
-//   border-collapse: collapse;
-//   border-spacing: 0;
-//   display: block;
-//   margin-bottom: 1rem;
-//   overflow: auto;
-//   width: 100%
-// }
-//
-// .markdown-section th {
-//   font-weight: 700
-// }
-//
-// .markdown-section td, .markdown-section th {
-//   border: 1px solid #ddd;
-//   padding: 6px 13px
-// }
-//
-// .markdown-section tr {
-//   border-top: 1px solid #ccc
-// }
-//
-// .markdown-section p.tip, .markdown-section tr:nth-child(2n) {
-//   background-color: #f8f8f8
-// }
-//
-// .markdown-section p.tip {
-//   border-bottom-right-radius: 2px;
-//   border-left: 4px solid #f66;
-//   border-top-right-radius: 2px;
-//   margin: 2em 0;
-//   padding: 12px 24px 12px 30px;
-//   position: relative
-// }
-//
-// .markdown-section p.tip:before {
-//   background-color: #f66;
-//   border-radius: 100%;
-//   color: #fff;
-//   content: "!";
-//   font-family: Dosis, Source Sans Pro, Helvetica Neue, Arial, sans-serif;
-//   font-size: 14px;
-//   font-weight: 700;
-//   left: -12px;
-//   line-height: 20px;
-//   position: absolute;
-//   height: 20px;
-//   width: 20px;
-//   text-align: center;
-//   top: 14px
-// }
-//
-// .markdown-section p.tip code {
-//   background-color: #efefef
-// }
-//
-// .markdown-section p.tip em {
-//   color: #34495e
-// }
-//
-// .markdown-section p.warn {
-//   background: rgba(66, 185, 131, .1);
-//   border-radius: 2px;
-//   padding: 1rem
-// }
-//
-// .markdown-section strong {
-//   color: #2c3e50;
-//   font-weight: 600
-// }
-//
-// .markdown-section a {
-//   color: var(--theme-color, #42b983);
-//   font-weight: 600
-// }
-//
-// .markdown-section figure, .markdown-section p {
-//   margin: 1.2em 0
-// }
-//
-// .markdown-section ol, .markdown-section p, .markdown-section ul {
-//   line-height: 1.6rem;
-//   word-spacing: .05rem
-// }
-//
-// .markdown-section ol, .markdown-section ul {
-//   padding-left: 1.5rem
-// }
-//
-// .markdown-section blockquote {
-//   border-left: 4px solid var(--theme-color, #42b983);
-//   color: #858585;
-//   margin: 2em 0;
-//   padding-left: 20px
-// }
-//
-// .markdown-section blockquote p {
-//   font-weight: 600;
-//   margin-left: 0
-// }
-//
-// .markdown-section iframe {
-//   margin: 1em 0
-// }
-//
-// .markdown-section em {
-//   color: #7f8c8d
-// }
-//
-// .markdown-section code {
-//   border-radius: 2px;
-//   color: #e96900;
-//   font-size: .8rem;
-//   margin: 0 2px;
-//   padding: 3px 5px;
-//   white-space: pre-wrap
-// }
-//
-// .markdown-section code, .markdown-section pre {
-//   background-color: #f8f8f8;
-//   font-family: Roboto Mono, Monaco, courier, monospace
-// }
-//
-// .markdown-section pre {
-//   -moz-osx-font-smoothing: initial;
-//   -webkit-font-smoothing: initial;
-//   line-height: 1.5rem;
-//   margin: 1.2em 0;
-//   overflow: auto;
-//   padding: 0 1.4rem;
-//   position: relative;
-//   word-wrap: normal
-// }
-//
-// .markdown-section pre>code {
-//   -moz-osx-font-smoothing: initial;
-//   -webkit-font-smoothing: initial;
-//   background-color: #f8f8f8;
-//   border-radius: 2px;
-//   color: #525252;
-//   display: block;
-//   font-family: Roboto Mono, Monaco, courier, monospace;
-//   font-size: .8rem;
-//   line-height: inherit;
-//   margin: 0 2px;
-//   max-width: inherit;
-//   overflow: inherit;
-//   padding: 2.2em 5px;
-//   white-space: inherit
-// }
-//
-// .markdown-section code:after, .markdown-section code:before {
-//   letter-spacing: .05rem
-// }
-//
-// code .token {
-//   -moz-osx-font-smoothing: initial;
-//   -webkit-font-smoothing: initial;
-//   min-height: 1.5rem
-// }
-//
-// pre:after {
-//   color: #ccc;
-//   content: attr(data-lang);
-//   font-size: .6rem;
-//   font-weight: 600;
-//   height: 15px;
-//   line-height: 15px;
-//   padding: 5px 10px 0;
-//   position: absolute;
-//   right: 0;
-//   text-align: right;
-//   top: 0
-// }
-//
-// .markdown-section code,
-// .markdown-section pre,
-// .markdown-section pre>code,
-// .markdown-section p.tip {
-//   background-color: #F1F1F1;
-// }
-//
-// .markdown-section tr:nth-child(2n) {
-//   background-color: transparent;
-// }
-//
-// .markdown-section th { white-space: nowrap; }
-// .markdown-section table { font-size: 16px; }
-//
-// .markdown-section code { color: #2badc4; }
-//
-// pre:after {
-//   text-transform: uppercase;
-//   color: #9fa8a9;
-//   font-weight: inherit;
-//   letter-spacing: 0.08em;
-// }
-//
-// .small {
-//   font-size: .9em;
-//   font-style: italic;
-//   line-height: 1.3 !important;
-//   max-width: 500px;
-// }
-//
-// .micro {
-//   color: #7f8c8d !important;
-//   font-size: .7em;
-// }
-//
-// .demoContainer {
-//   width: 1px; min-width: 100%;
-//   border: 0 !important;
-// }
-//
-// .tagCode {
-//   background-color: #F1F1F1;
-//   border-radius: 5px;
-//   font-size: 0.9rem;
-//   line-height: 1rem;
-//   margin: 0 2px;
-//   padding: 3px 10px 4px;
-//   white-space: pre-wrap;
-//   display: inline-block;
-// }
+@include media(portrait) {
+  .markdown-section h2:before { display: none; }
+  .markdown-section .docsify-pagination-container { margin-top: double($space); }
+}

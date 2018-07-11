@@ -16,4 +16,9 @@ a {
     color: $base-link-color-dark;
     text-decoration: none;
   }
+
+  a[disabled] {
+    cursor: not-allowed;
+    opacity: .6;
+  }
 }

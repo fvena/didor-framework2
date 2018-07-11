@@ -28,9 +28,9 @@ html {
 body {
   @include fontsize(zeta);
   height: 100%;
-  font-family: font($body-type, font-family);
+  font-family: $base-text-family;
   font-style: normal;
-  font-weight: font($body-type, regular);
+  font-weight: $base-text-weight;
   line-height: $space;
   overflow-x: hidden;
 }

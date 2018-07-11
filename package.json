@@ -9,7 +9,8 @@
     "docs": "docsify serve ./docs",
     "dev": "npm run lint:scss && npm run scss",
     "scss": "node-sass -w src/didor.scss -o docs/src/stylesheets --sourceMap docs/src/stylesheets",
-    "lint:scss": "sass-lint --config sass-lint.yml -v -q",
+    "lint:scss": "sass-lint --config .sass-lint.yml -v -q",
+    "lint:fix": "sass-lint-auto-fix -c .sass-fix.yml",
     "sassVar": "node build/getSassVar.js",
     "icons": "webfont src/icons/*.svg --font-name didor --dest docs/src/fonts --template src/icons/templates/_components.icons.scss.njk --dest-template src/6-Components --template-font-path ../fonts --template-class-name icon --font-height 200"
   },
@@ -25,6 +26,7 @@
     "fs": "^0.0.1-security",
     "node-sass": "^4.9.0",
     "sass-lint": "1.12.1",
+    "sass-lint-auto-fix": "^0.11.0",
     "webfont": "8.1.4"
   },
   "dependencies": {

@@ -3,37 +3,40 @@
   display: block;
 
   img {
-    width: 60px;
     display: block;
+    width: 60px;
     margin: $space auto halve($space);
   }
 
   &:after {
-    content: 'Documentación';
-    display: block;
     @include fontsize(iota);
+    display: block;
+    margin-bottom: double($space);
     color: gray(gray2);
     font-family: $base-heading-family;
     font-weight: $base-heading-weight;
-    text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: double($space);
     text-align: center;
+    text-transform: uppercase;
+    content: 'Documentación';
   }
 }
 
 // Menú de navegación del sidebar
+.sidebar > nav,
 .sidebar-nav {
   li {
     margin: 0;
     list-style: none;
   }
 
-  li > a {
+  li a {
     @include fontsize(eta);
     display: block;
+    padding: .15rem 0;
     color: gray(gray2);
-    padding: 0.15rem 0;
+    font-weight: font($body-type, regular);
+    text-transform: none;
 
     &:hover {
       color: gray(gray1);
@@ -41,35 +44,80 @@
   }
 
   li.active a {
-    color: gray(gray1);
     position: relative;
+    color: gray(gray1);
 
     &:after {
-      content: '';
       position: absolute;
-      top: 0rem;
+      top: 0;
       left: -$space;
-      height: 100%;
       width: calc(100% + #{double($space)});
-      background-color: gray(gray6);
+      height: 100%;
       border-right: 3px solid brand();
+      background-color: gray(gray6);
+      content: '';
       z-index: -1;
     }
   }
 
   ul > li > p {
     @include fontsize(theta);
+    margin-bottom: 0;
     color: gray(gray1);
     font-weight: font($body-type, bold);
     text-transform: uppercase;
-    padding-bottom: quarter($space);
-    margin-bottom: 0;
-    border-bottom: 1px solid $border-color;
   }
 
   ul > li > ul {
+    margin-top: quarter($space);
     margin-bottom: $space;
+    border-top: 1px solid $border-color;
   }
+}
+
+.sidebar-toggle {
+  position: fixed;
+  top: 0;
+  left: $sidebar-width;
+  width: double($space);
+  height: triple($space);
+  transition: .5s cubic-bezier(.91, .06, .47, 1.05) left;
+  border: 0;
+  outline: none;
+  background-color: rgba(255, 255, 255, .9);
+  line-height: triple($space);
+  text-align: center;
+  cursor: pointer;
+  z-index: 10;
+
+  &:hover { color: brand(brand-dark); }
+
+  &:before {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    transition: .5s cubic-bezier(.91, .06, .47, 1.05) width;
+    background-color: rgba(255, 255, 255, .9);
+    content: '';
+  }
+}
+
+.sidebar-toggle-button {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  z-index: 1;
+}
+
+.sidebar-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  margin-bottom: 4px;
+  background-color: brand();
 }
 
 @include media(screen) {
@@ -81,4 +129,41 @@
       width: calc(100% + #{triple($space)});
     }
   }
+
+  .sidebar-toggle { left: $sidebar-width-large; }
+}
+
+@include media(portrait) {
+  .sidebar > nav,
+  .sidebar-nav {
+    li a { @include fontsize(zeta); padding: quarter($space) 0;}
+    ul > li > p { @include fontsize(eta); }
+  }
+
+  .sidebar-toggle {
+    left: 0;
+    height: double($space);
+    line-height: double($space);
+  }
+
+  .app-name-link:after { @include fontsize(eta); }
+}
+
+@include media(lap) {
+  .sidebar > nav { display: none; }
+}
+
+@include media(palm) {
+  .sidebar > h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 0;
+    padding-top: halve($space);
+  }
+
+  .sidebar { padding-top: 10rem; }
+
+  .app-name-link:after { margin-bottom: $space;}
 }

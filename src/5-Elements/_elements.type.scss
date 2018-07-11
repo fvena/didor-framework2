@@ -119,41 +119,58 @@ blockquote {
   @include media(palm) {
     margin-left: 0;
   }
+
+  p:last-of-type { margin-bottom: 0; }
 }
 
 
 // Code block.
 code,
 pre {
+  @include fontsize(theta);
   background-color: $code-background-colour;
   font-family: font($monospace-type, font-family);
+  font-weight: font($monospace-type, regular);
+  line-height: 1.2rem;
 }
 
 pre {
   display: block;
-  padding: halve($space);
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  word-break: break-all;
+  position: relative;
+  padding: $space;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  overflow: auto;
+  word-break: normal;
+  hyphens: none;
+  tab-size: 4;
+  word-wrap: normal;
 
   &:after {
-    color: gray(gray2);
-    content: attr(data-lang);
-    font-size: .6rem;
-    height: 15px;
-    line-height: 15px;
-    padding: 5px 10px 0;
     position: absolute;
-    right: 0;
-    text-align: right;
     top: 0;
+    right: 0;
+    height: 15px;
+    padding: quarter($space);
+    color: gray(gray2);
+    font-size: .6rem;
+    font-weight: bold;
+    letter-spacing: .08em;
+    line-height: 15px;
+    text-align: right;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    content: attr(data-lang);
   }
 }
 
-code {
-  @include fontsize(eta);
+// Inline code
+:not(pre) > code {
+  padding: .1rem .3rem;
+  border-radius: $border-radius;
+  color: brand(brand-dark);
+  line-height: $space;
+  white-space: nowrap;
 }
 
 // Horizontal rule.

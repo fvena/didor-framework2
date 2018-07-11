@@ -1,8 +1,16 @@
 # Headline
 {docsify-updated}
 
-> An awesome project 2. Hola Jaime
+> An awesome project 2.
 
+!> **Time** is money, my friend!
+
+?> _TODO_ unit test
+
+- [ ] foo
+- [x] baz
+  - [ ] bim
+  - [ ] lim
 
 ``` html
 <div id="app-7">
@@ -20,6 +28,22 @@
     </todo-item>
   </ol>
 </div>
+```
+
+``` js
+function loadJSON(file) {
+  return new Promise(function(resolve, reject) {
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType('application/json');
+    xobj.open('GET', file, true);
+    xobj.onreadystatechange = function () {
+      if (xobj.readyState => 4 && xobj.status === '200') {
+        resolve(JSON.parse(xobj.responseText));
+      }
+    };
+    xobj.send(null);
+  });
+}
 ```
 
 ``` html

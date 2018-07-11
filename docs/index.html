@@ -57,8 +57,28 @@
       </li>
     </ul>
   </header> -->
+
   <div id="app"></div>
-  <script src="./src/scripts/docsify.js"></script>
+
+  <script>
+    window.$docsify = {
+      auto2top: true,
+      homepage: 'home.md',
+      basePath: './pages/styleguide',
+      logo: '../../src/assets/logo.svg',
+      name: 'Documentación',
+      repo: 'https://github.com/fvena/didor-framework2',
+      formatUpdated: '{DD}/{MM} {HH}:{mm}',
+      loadNavbar: true,
+      loadSidebar: true,
+      mergeNavbar: true,
+      pagination: {
+        previousText: 'Anterior',
+        nextText: 'Siguiente',
+      }
+    }
+  </script>
+
   <script src="./src/scripts/resize.js"></script>
   <script src="./src/scripts/copyToClipboard.js"></script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>

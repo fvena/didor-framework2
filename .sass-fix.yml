@@ -1,0 +1,24 @@
+files:
+  include: 'src/**/*.scss'
+  ignore: [
+    'node_modules',
+    'src/4-Generic/_generic.normalize.scss',
+    'src/4-Generic/_generic.reset.scss'
+  ]
+syntax:
+    include:
+      - scss
+      - sass
+resolvers:
+  property-sort-order: 1
+  attribute-quotes: 1
+  border-zero: 1
+  no-color-keywords: 1
+  no-css-comments: 1
+  no-important: 1
+  no-trailing-zero: 1
+  space-after-bang: 1
+  space-before-bang: 1
+  space-after-colon: 1
+  space-before-colon: 1
+  hex-length: 1

@@ -1,12 +1,12 @@
 * Inicio
   * [Introducción](/)
-  * [Guía de estilo codificación](general/codeguide.md)
+  * [Guía de estilo codificación](codeguide.md)
   * [Changelog](changelog.md)
 
 * Diseño
-  * [Colores](design/colors.md)
-  * [Iconos](design/icons.md)
-  * [Responsive](design/responsive.md)
+  * [Colores](colors.md)
+  * [Iconos](icons.md)
+  * [Responsive](responsive.md)
 
 * Componentes
 
@@ -17,4 +17,4 @@
 
 * Utilidades
 
-  * [Visibilidad](utility/visibility.md)
+  * [Visibilidad](visibility.md)

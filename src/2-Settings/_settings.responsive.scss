@@ -23,7 +23,7 @@ $desk:  1800px;
  *
  * Indica si se trata de un diseño siguiendo el enfoque Mobile First
  */
-$mobileFirst: false;
+$mobile-first: false;
 
 
 /**
@@ -32,7 +32,7 @@ $mobileFirst: false;
  * Listado de los alias con los puntos de corte para un desarrollo enfocado a
  * desk first. Puedes cambiarles el nombre, el valor o añadir más puntos.
  */
-$breakpointsDeskFirst: (
+$breakpoints-desk-first: (
   palm:      'screen and (max-width: #{px2em($palm - 1)})',
   lap:       'screen and (min-width: #{px2em($palm)}) and (max-width: #{px2em($lap - 1)})',
   small:     'screen and (min-width: #{px2em($lap)}) and (max-width: #{px2em($small - 1)})',
@@ -52,7 +52,7 @@ $breakpointsDeskFirst: (
  * Listado de los alias con los puntos de scorte para un desarrollo enfocado a
  * mobile first. Puedes cambiarles el nombre, el valor o añadir más puntos.
  */
-$breakpointsMobileFirst: (
+$breakpoints-mobile-first: (
   palm:      'screen and (max-width: #{px2em($palm - 1)})',
   lap:       'screen and (min-width: #{px2em($palm)})',
   small:     'screen and (min-width: #{px2em($lap)})',

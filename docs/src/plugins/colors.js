@@ -13,7 +13,7 @@ function loadJSON(file) {
 }
 
 function colorsDemo(colors, family){
-  var content = '<div class="colors-demos">';
+  var content = '<div class="colors-demo">';
 
   if (family === 'brand'){
     for (var color in colors) {
