@@ -938,13 +938,12 @@ pre {
     position: absolute;
     top: 0;
     right: 0;
-    height: 15px;
-    padding: 0.4rem;
+    height: 1.6rem;
+    padding: 0.8rem;
     color: #6f777b;
     font-size: .6rem;
     font-weight: bold;
     letter-spacing: .08em;
-    line-height: 15px;
     text-align: right;
     text-transform: uppercase;
     content: attr(data-lang); }
@@ -984,6 +983,146 @@ pre {
  * These are more explicit to the type of object. In this case, a
  * .product-slider-list would be in a components/_product-slider.scss partial
  * within this layer.
+ */
+/**
+ * ICONOS
+ *
+ * Estilos para los iconos
+ */
+@font-face {
+  font-family: didor;
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/didor.eot");
+  src: url("../fonts/didor.eot?#iefix") format("embedded-opentype"), url("../fonts/didor.woff2") format("woff2"), url("../fonts/didor.woff") format("woff"), url("../fonts/didor.ttf") format("truetype"), url("../fonts/didor.svg#didor") format("svg"); }
+
+[class^='icon-'],
+[class*=' icon-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'didor' !important;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-transform: none;
+  speak: none;
+  /* Better Font Rendering =========== */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased; }
+
+.icon-desktop:before {
+  content: '\ea01'; }
+
+.icon-lap:before {
+  content: '\ea02'; }
+
+.icon-large:before {
+  content: '\ea03'; }
+
+.icon-palm:before {
+  content: '\ea04'; }
+
+.icon-small:before {
+  content: '\ea05'; }
+
+/**
+ * TYPESET
+ *
+ * Estilos para texto typeset
+ */
+.typeset p a,
+.typeset li a {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #68ccde 50%);
+  background-repeat: repeat-x;
+  background-position: 0 93%;
+  background-size: 100% .15rem;
+  text-shadow: 0.1rem 0 #ffffff, 0.15rem 0 #ffffff, -0.1rem 0 #ffffff, -0.15rem 0 #ffffff; }
+  .typeset p a:hover, .typeset p a:active, .typeset p a:focus,
+  .typeset li a:hover,
+  .typeset li a:active,
+  .typeset li a:focus {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #68ccde 50%); }
+
+.typeset h1,
+.typeset h2,
+.typeset h3,
+.typeset h4,
+.typeset h5,
+.typeset h6 {
+  font-feature-settings: 'dlig', 'liga', 'lnum', 'kern'; }
+
+.typeset p,
+.typeset li,
+.typeset dt,
+.typeset dd {
+  font-feature-settings: 'kern', 'onum', 'liga'; }
+
+.typeset table {
+  font-feature-settings: 'liga', 'lnum', 'tnum', 'kern'; }
+
+.typeset ul li,
+.typeset ol li {
+  margin-left: 0; }
+  @media screen and (max-width: 37.4375em) {
+    .typeset ul li,
+    .typeset ol li {
+      margin-left: 2rem; } }
+  .typeset ul li ol,
+  .typeset ul li ul,
+  .typeset ol li ol,
+  .typeset ol li ul {
+    margin-left: 2rem;
+    padding-top: 1.6rem; }
+
+.typeset ol {
+  list-style-type: none; }
+  .typeset ol li {
+    position: relative;
+    counter-increment: top-level; }
+    .typeset ol li:before {
+      position: absolute;
+      width: 2em;
+      margin-left: -3rem;
+      text-align: right;
+      content: counter(top-level) ".";
+      font-feature-settings: 'lnum', 'tnum'; }
+    .typeset ol li ul li:before {
+      content: ''; }
+    .typeset ol li ul li ol li {
+      counter-increment: alt-level; }
+    .typeset ol li ul li ol li:before {
+      content: counter(alt-level) "."; }
+    .typeset ol li ol li {
+      counter-increment: sub-level; }
+      .typeset ol li ol li:before {
+        content: counter(top-level) "." counter(sub-level); }
+      .typeset ol li ol li ul li:before {
+        content: ''; }
+      .typeset ol li ol li ol li {
+        counter-increment: sub-sub-level; }
+        .typeset ol li ol li ol li:before {
+          content: counter(top-level) "." counter(sub-level) "." counter(sub-sub-level); }
+
+.typeset .upper {
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  font-kerning: normal; }
+
+.typeset .small-caps {
+  letter-spacing: .1rem;
+  font-feature-settings: 'smcp', 'kern';
+  font-kerning: normal; }
+
+.typeset .lining-numerals {
+  font-feature-settings: 'lnum', 'kern'; }
+
+.typeset .oldstyle-numerals {
+  font-feature-settings: 'onum', 'kern'; }
+
+/**
+ * Documentation
+ *
+ * Estilos relacionados con la plantilla para documentar proyectos.
  */
 .sidebar {
   position: fixed;
@@ -1426,7 +1565,7 @@ main.hidden {
 .markdown-section p.warn {
   position: relative;
   margin: 3.2rem 0;
-  padding: 0.8rem 1.6rem;
+  padding: 1.6rem;
   background-color: #f5f6f8; }
   .markdown-section p.tip:before,
   .markdown-section p.warn:before {
@@ -1470,10 +1609,8 @@ main.hidden {
   border-left: 4px solid #28a2b8;
   color: #9da6aa; }
 
-.markdown-section .demoContainer {
-  width: 1px;
-  min-width: 100%;
-  border: 0; }
+.markdown-section .blockExample {
+  margin: 4.8rem 0; }
 
 @media screen and (min-width: 112.5em) {
   .markdown-section {
@@ -1661,141 +1798,6 @@ pre[data-lang] code {
 pre > code.highlight {
   outline: .4em solid #bf616a;
   outline-offset: .4em; }
-
-/**
- * ICONOS
- *
- * Estilos para los iconos
- */
-@font-face {
-  font-family: didor;
-  font-style: normal;
-  font-weight: normal;
-  src: url("../fonts/didor.eot");
-  src: url("../fonts/didor.eot?#iefix") format("embedded-opentype"), url("../fonts/didor.woff2") format("woff2"), url("../fonts/didor.woff") format("woff"), url("../fonts/didor.ttf") format("truetype"), url("../fonts/didor.svg#didor") format("svg"); }
-
-[class^='icon-'],
-[class*=' icon-'] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'didor' !important;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  line-height: 1;
-  text-transform: none;
-  speak: none;
-  /* Better Font Rendering =========== */
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased; }
-
-.icon-desktop:before {
-  content: '\ea01'; }
-
-.icon-lap:before {
-  content: '\ea02'; }
-
-.icon-large:before {
-  content: '\ea03'; }
-
-.icon-palm:before {
-  content: '\ea04'; }
-
-.icon-small:before {
-  content: '\ea05'; }
-
-/**
- * TYPESET
- *
- * Estilos para texto typeset
- */
-.typeset p a,
-.typeset li a {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #68ccde 50%);
-  background-repeat: repeat-x;
-  background-position: 0 93%;
-  background-size: 100% .15rem;
-  text-shadow: 0.1rem 0 #ffffff, 0.15rem 0 #ffffff, -0.1rem 0 #ffffff, -0.15rem 0 #ffffff; }
-  .typeset p a:hover, .typeset p a:active, .typeset p a:focus,
-  .typeset li a:hover,
-  .typeset li a:active,
-  .typeset li a:focus {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #68ccde 50%); }
-
-.typeset h1,
-.typeset h2,
-.typeset h3,
-.typeset h4,
-.typeset h5,
-.typeset h6 {
-  font-feature-settings: 'dlig', 'liga', 'lnum', 'kern'; }
-
-.typeset p,
-.typeset li,
-.typeset dt,
-.typeset dd {
-  font-feature-settings: 'kern', 'onum', 'liga'; }
-
-.typeset table {
-  font-feature-settings: 'liga', 'lnum', 'tnum', 'kern'; }
-
-.typeset ul li,
-.typeset ol li {
-  margin-left: 0; }
-  @media screen and (max-width: 37.4375em) {
-    .typeset ul li,
-    .typeset ol li {
-      margin-left: 2rem; } }
-  .typeset ul li ol,
-  .typeset ul li ul,
-  .typeset ol li ol,
-  .typeset ol li ul {
-    margin-left: 2rem;
-    padding-top: 1.6rem; }
-
-.typeset ol {
-  list-style-type: none; }
-  .typeset ol li {
-    position: relative;
-    counter-increment: top-level; }
-    .typeset ol li:before {
-      position: absolute;
-      width: 2em;
-      margin-left: -3rem;
-      text-align: right;
-      content: counter(top-level) ".";
-      font-feature-settings: 'lnum', 'tnum'; }
-    .typeset ol li ul li:before {
-      content: ''; }
-    .typeset ol li ul li ol li {
-      counter-increment: alt-level; }
-    .typeset ol li ul li ol li:before {
-      content: counter(alt-level) "."; }
-    .typeset ol li ol li {
-      counter-increment: sub-level; }
-      .typeset ol li ol li:before {
-        content: counter(top-level) "." counter(sub-level); }
-      .typeset ol li ol li ul li:before {
-        content: ''; }
-      .typeset ol li ol li ol li {
-        counter-increment: sub-sub-level; }
-        .typeset ol li ol li ol li:before {
-          content: counter(top-level) "." counter(sub-level) "." counter(sub-sub-level); }
-
-.typeset .upper {
-  letter-spacing: .1rem;
-  text-transform: uppercase;
-  font-kerning: normal; }
-
-.typeset .small-caps {
-  letter-spacing: .1rem;
-  font-feature-settings: 'smcp', 'kern';
-  font-kerning: normal; }
-
-.typeset .lining-numerals {
-  font-feature-settings: 'lnum', 'kern'; }
-
-.typeset .oldstyle-numerals {
-  font-feature-settings: 'onum', 'kern'; }
 
 .responsive {
   position: relative; }
@@ -1995,6 +1997,31 @@ pre > code.highlight {
   line-height: 1.6rem;
   margin-top: 0.8rem;
   color: #6f777b; }
+
+.tab {
+  margin-bottom: 1.6rem;
+  border-bottom: 1px solid #e7ebee; }
+  .tab li {
+    display: inline-block;
+    margin-left: 0;
+    list-style: none; }
+
+.tabcontent {
+  width: 100%;
+  margin: 0 !important; }
+
+.tablinks {
+  font-size: 0.72431rem;
+  line-height: 1.6rem;
+  display: inline-block;
+  padding: 0 1.6rem 0.4rem;
+  color: #9da6aa;
+  text-transform: uppercase; }
+  .tablinks:hover {
+    color: #3b4c53; }
+  .tablinks.active {
+    border-bottom: 2px solid #28a2b8;
+    color: #3b4c53; }
 
 /**
  * HELPERS

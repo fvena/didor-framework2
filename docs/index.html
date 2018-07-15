@@ -9,60 +9,10 @@
   <link rel="stylesheet" href="./src/stylesheets/didor.css">
 </head>
 <body onresize="resizeAllDemoIframes()">
-  <!-- <header class="header">
-    <a class="header__logo" href="/">
-      <img src="/src/assets/logo.svg">
-    </a>
-
-    <div class="header__title">Daikin Usa</div>
-
-    <ul class="header__nav">
-      <li>
-        <a href="#" class="header__nav__link">Inicio</a>
-      </li>
-
-      <li class="header__nav__dropdown__container">
-        <a class="header__nav__link">Producto</a><span class="arrow"></span>
-        <ul class="header__nav__dropdown">
-          <li><ul>
-            <li><a href="#" class="header__nav__link">Requisitos</a></li>
-            <li><a href="#" class="header__nav__link">Historias de Usuario</a></li>
-            <li><a href="#" class="header__nav__link">Documentación</a></li>
-          </ul></li>
-        </ul>
-      </li>
-
-      <li class="header__nav__dropdown__container">
-        <a class="header__nav__link">Diseño</a><span class="arrow"></span>
-        <ul class="header__nav__dropdown">
-          <li><ul>
-            <li><a href="#" class="header__nav__link">Guía de estilos</a></li>
-            <li><a href="#" class="header__nav__link">Prototipo</a></li>
-          </ul></li>
-        </ul>
-      </li>
-
-      <li class="header__nav__dropdown__container">
-        <a class="header__nav__link">Desarrollo</a><span class="arrow"></span>
-        <ul class="header__nav__dropdown">
-          <li><ul>
-            <li><a href="#" class="header__nav__link">Frontend</a></li>
-            <li><a href="#" class="header__nav__link">Backend</a></li>
-          </ul></li>
-        </ul>
-      </li>
-
-      <li>
-        <a href="#" class="header__nav__link">Calidad</a>
-      </li>
-    </ul>
-  </header> -->
-
   <div id="app"></div>
 
   <script>
     window.$docsify = {
-      auto2top: true,
       homepage: 'home.md',
       basePath: './pages/styleguide',
       logo: '../../src/assets/logo.svg',
@@ -72,6 +22,7 @@
       loadNavbar: true,
       loadSidebar: true,
       mergeNavbar: true,
+      auto2top: true,
       pagination: {
         previousText: 'Anterior',
         nextText: 'Siguiente',
@@ -81,12 +32,14 @@
 
   <script src="./src/scripts/resize.js"></script>
   <script src="./src/scripts/copyToClipboard.js"></script>
+  <script src="./src/scripts/tabs.js"></script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
   <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-scss.min.js"></script>
-  <script src="./src/plugins/demos.js"></script>
-  <script src="./src/plugins/colors.js"></script>
-  <script src="./src/plugins/icons.js"></script>
+  <script src="./src/plugins/blockDemos.js"></script>
+  <script src="./src/plugins/blockColors.js"></script>
+  <script src="./src/plugins/blockIcons.js"></script>
+  <script src="./src/plugins/blockExample.js"></script>
 </body>
 </html>

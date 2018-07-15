@@ -61,7 +61,7 @@
 .markdown-section p.warn {
   position: relative;
   margin: double($space) 0;
-  padding: halve($space) $space;
+  padding: $space;
   background-color: gray(gray6);
 
   &:before {
@@ -117,10 +117,14 @@
   color: gray(gray3);
 }
 
-.markdown-section .demoContainer {
-  width: 1px;
-  min-width: 100%;
-  border: 0;
+// .markdown-section .demoContainer {
+//   width: 1px;
+//   min-width: 100%;
+//   border: 0;
+// }
+
+.markdown-section .blockExample {
+  margin: triple($space) 0;
 }
 
 @include media(large) {
