@@ -1,7 +1,11 @@
-* Inicio
+* [Api](api.md)
+
+* Plantilla
   * [Introducción](/)
-  * [Guía de estilo codificación](codeguide.md)
-  * [Changelog](changelog.md)
+  * [Colores](templateColor.md)
+  * [Iconos](templateIcon.md)
+  * [Demo](templateDemo.md)
+  * [Tabs Code](templateTabs.md)
 
 * Diseño
   * [Colores](colors.md)

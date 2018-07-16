@@ -25,7 +25,7 @@ async function install (hook, vm) {
   const varSass = await loadJSON('/src/sassVar.json');
 
   hook.beforeEach(function (content) {
-    const reg = /^iconos(.*)+?\>$/gm;
+    const reg = /^(?!\`\`\`\s)iconos(.*)+?(?!\s\`\`\`)\>$/gm;
     const icons = varSass.icons;
 
     let match = reg.exec(content);

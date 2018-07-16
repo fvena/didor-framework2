@@ -30,7 +30,7 @@ function demoCode(code, language){
 
 async function install (hook, vm) {
   hook.beforeEach(function (content) {
-    const reg = /^```demo(\[(.*)?\])?((.*\n)+?)?```$/gm;
+    const reg = /^(?!\`\`\`\s)```demo(\[(.*)?\])?((.*\n)+?)?```(?!\s\`\`\`)$/gm;
     var match = reg.exec(content);
     var count = 1;
 

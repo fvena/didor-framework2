@@ -1016,14 +1016,17 @@ pre {
 .icon-lap:before {
   content: '\ea02'; }
 
-.icon-large:before {
+.icon-lapi:before {
   content: '\ea03'; }
 
-.icon-palm:before {
+.icon-large:before {
   content: '\ea04'; }
 
-.icon-small:before {
+.icon-palm:before {
   content: '\ea05'; }
+
+.icon-small:before {
+  content: '\ea06'; }
 
 /**
  * TYPESET
@@ -1609,6 +1612,12 @@ main.hidden {
   border-left: 4px solid #28a2b8;
   color: #9da6aa; }
 
+.markdown-section iframe {
+  width: 1px;
+  min-width: 100%;
+  border: 0;
+  margin: 3.2rem 0; }
+
 .markdown-section .blockExample {
   margin: 4.8rem 0; }
 
@@ -1961,6 +1970,9 @@ pre > code.highlight {
   .colorBlock__col:nth-of-type(2n + 0) {
     margin-right: 0; } }
 
+.icons-demo {
+  margin: 4.8rem 0; }
+
 .iconBlock {
   display: inline-block;
   position: relative;
@@ -2007,7 +2019,9 @@ pre > code.highlight {
     list-style: none; }
 
 .tabcontent {
-  width: 100%;
+  width: 100%; }
+
+.blockExample .tabcontent {
   margin: 0 !important; }
 
 .tablinks {

@@ -1,5 +1,10 @@
-# Headline
+# Plantilla
 {docsify-updated}
+
+
+Esta plantilla utiliza como base la librería [docsify](https://docsify.js.org/).
+Se han creado varios plugins con nuevas funcionalidades.
+
 
 ```demo
 <p>

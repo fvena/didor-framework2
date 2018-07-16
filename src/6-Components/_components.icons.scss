@@ -6,9 +6,10 @@
 
 $icon-desktop: '\ea01';
 $icon-lap: '\ea02';
-$icon-large: '\ea03';
-$icon-palm: '\ea04';
-$icon-small: '\ea05';
+$icon-lapi: '\ea03';
+$icon-large: '\ea04';
+$icon-palm: '\ea05';
+$icon-small: '\ea06';
 
 
 // sass-lint:disable indentation no-duplicate-properties
@@ -48,6 +49,7 @@ $icon-small: '\ea05';
 
 .icon-desktop:before { content: '\ea01'; }
 .icon-lap:before { content: '\ea02'; }
-.icon-large:before { content: '\ea03'; }
-.icon-palm:before { content: '\ea04'; }
-.icon-small:before { content: '\ea05'; }
+.icon-lapi:before { content: '\ea03'; }
+.icon-large:before { content: '\ea04'; }
+.icon-palm:before { content: '\ea05'; }
+.icon-small:before { content: '\ea06'; }

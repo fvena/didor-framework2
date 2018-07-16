@@ -78,7 +78,7 @@ async function install (hook, vm) {
   const varSass = await loadJSON('/src/sassVar.json');
 
   hook.beforeEach(function (content) {
-    const reg = /^colors\[(.*)+?\]\>$/gm;
+    const reg = /^(?!\`\`\`\s)colors\[(.*)+?\]\>(?!\s\`\`\`)$/gm;
     const colors = varSass.colors;
 
     let match = reg.exec(content);

@@ -117,11 +117,12 @@
   color: gray(gray3);
 }
 
-// .markdown-section .demoContainer {
-//   width: 1px;
-//   min-width: 100%;
-//   border: 0;
-// }
+.markdown-section iframe {
+  width: 1px;
+  min-width: 100%;
+  border: 0;
+  margin: double($space) 0;
+}
 
 .markdown-section .blockExample {
   margin: triple($space) 0;
