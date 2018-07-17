@@ -1,0 +1,24 @@
+.apiSection {
+  max-width: inherit !important;
+  padding-right: 0;
+
+  h2:before { display: none; }
+}
+
+.apiBlock {
+  border-bottom: 1px solid $border-color;
+  padding-right: calc(50% + #{$space});
+  position: relative;
+
+  &:before {
+    content: '';
+    background-color: #2b303b;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: calc(100% + 1px);
+    border-bottom: 1px solid lighten(#2b303b,5%);
+    z-index: 10;
+  }
+}
