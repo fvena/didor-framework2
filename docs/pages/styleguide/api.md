@@ -1,53 +1,58 @@
 api>
 
+<!-- Bloque 1 -->
 apiBlock>
-
-apiDoc>
 # Título
 
-
-apiBlock>
-
-apiDoc>
 ## Título 2
 
 Este es un texto de ejemplo:
 
-| var      | Descripción                                                  |
-| -------- | ------------------------------------------------------------ |
-| `brand`  | Listado con los colores incluidos en el `$color-brand-map`.  |
-| `gray`   | Listado con los colores incluidos en el `$color-gray-map`.   |
-| `notify` | Listado con los colores incluidos en el `$color-notify-map`. |
 
-apiExample>
 
-```api
-console.log('hola mundo');
+```apiCode[html](Example Request)
+<p>hola mundo</p>
+<p>hola mundo</p>
+<p>hola mundo</p>
 ```
 
-apiBlock>
-
-apiExample>
-
-```api
-console.log('hola mundo');
+```apiCode[json](Example Response)
+{
+  'key1': 'value1',
+  key2: 3
+}
 ```
 
+apiBlock/>
+
+<!-- Bloque 2 -->
 apiBlock>
 
-apiDoc>
-## Título 2
+apiUrl[GET](https://swapi.co/api/people/1)
 
 Este es un texto de ejemplo:
 
-| var      | Descripción                                                  |
-| -------- | ------------------------------------------------------------ |
-| `brand`  | Listado con los colores incluidos en el `$color-brand-map`.  |
-| `gray`   | Listado con los colores incluidos en el `$color-gray-map`.   |
-| `notify` | Listado con los colores incluidos en el `$color-notify-map`. |
+Pepe
 
-apiExample>
 
-```api
+apiBlock/>
+
+<!-- Bloque 3 -->
+apiBlock>
+
+## Título 3
+
+Este es un texto de ejemplo:
+
+| field    | Type | Descripción                                                  |
+| -------- | --- |  ------------------------------------------------------------ |
+| `brand`  | `Integer` | Listado con los colores incluidos en el `$color-brand-map`.  |
+| `gray`   | `Integer` | Listado con los colores incluidos en el `$color-gray-map`.   |
+| `notify` | `String` | Listado con los colores incluidos en el `$color-notify-map`. |
+
+
+```apiCode
 console.log('hola mundo');
 ```
+
+apiBlock/>

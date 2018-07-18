@@ -1,24 +1,102 @@
 .apiSection {
-  max-width: inherit !important;
-  padding-right: 0;
+  .app-nav {
+    height: double($space);
+    padding-right: double($space);
+  }
 
-  h2:before { display: none; }
+  .app-nav > ul > li > p {
+    height: double($space);
+    line-height: double($space);
+  }
+
+  .github-corner svg {
+    height: double($space);
+    width: double($space);
+  }
+
+  .sidebar-toggle {
+    height: double($space);
+    line-height: double($space);
+  }
+
+  .content {
+    padding-top: triple($space);
+  }
+
+  .markdown-section {
+    max-width: inherit !important;
+    padding: 0;
+
+    h2:before { display: none; }
+  }
+
+  .docsify-pagination-container {
+    padding-right: $space;
+    margin-top: 0;
+    border-top: 0;
+  }
 }
 
 .apiBlock {
-  border-bottom: 1px solid $border-color;
-  padding-right: calc(50% + #{$space});
+  padding: 0;
   position: relative;
+  display: flex;
+}
 
-  &:before {
-    content: '';
-    background-color: #2b303b;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: calc(100% + 1px);
-    border-bottom: 1px solid lighten(#2b303b,5%);
-    z-index: 10;
+.apiDoc,
+.apiCode {
+  width: 50%;
+  padding: double($space) $space double($space);
+}
+
+.apiDoc {
+  border-bottom: 1px solid $border-color;
+}
+
+
+.apiCode {
+  background-color: #2b303b;
+  border-bottom: 1px solid lighten(#2b303b,5%);
+
+  pre {
+    margin-top: 0;
+    padding: 0;
+    min-height: double($space);
   }
+
+  pre:after { padding: 0;}
+}
+
+.apiCode__title {
+  @include fontsize(eta);
+  color: gray(gray3);
+  border-bottom: 1px solid lighten(#2b303b,5%);
+  margin-bottom: $space;
+  text-transform: uppercase;
+  font-weight: font($body-type, bold);
+}
+
+.apiUrl {
+  margin-bottom: double($space);
+  padding: $space;
+  background-color: gray(gray6);
+
+  a { color: gray(gray1); }
+  a:hover { color: brand(); }
+}
+
+.apiUrl__method {
+  @include fontsize(eta);
+  display: inline-block;
+  background-color: gray(gray3);
+  border-radius: 2px;
+  padding: 0 quarter($space);
+  margin-right: quarter($space);
+  color: gray(white);
+  font-weight: font($body-type, bold);
+
+  &.get { background-color: notify(success); }
+  &.post { background-color: notify(warning); }
+  &.put { background-color: notify(warning); }
+  &.delete { background-color: notify(danger); }
 }

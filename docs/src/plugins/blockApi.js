@@ -1,81 +1,96 @@
-function apiBlock(content) {
-  const regDoc = /^\<p\>apiDoc&gt;\<\/p\>((.*\n)+?)?\<p\>apiExample&gt;\<\/p\>|\<p\>apiResult&gt;\<\/p\>$/gm;
-  const regExample = /^\<p\>apiExample&gt;\<\/p\>((.*\n)+?)?\<p\>apiDoc&gt;\<\/p\>|\<p\>apiResult&gt;\<\/p\>$/gm;
-  const regResult = /^\<p\>apiResult&gt;\<\/p\>((.*\n)+?)?\<p\>apiDoc&gt;\<\/p\>|\<p\>apiExample&gt;\<\/p\>$/gm;
+function apiCode(code, title, language){
+  language = (language)? language : 'js';
+  title = (title)? `<div class="apiCode__title">${title}</div>`: '';
+  code = code.trim().replace(/@DOCSIFY_QM@/g, '`');
+  const hl = Prism.highlight(
+    code,
+    Prism.languages[language] || Prism.languages.markup
+  )
 
-  const docs = [];
-  const examples = [];
-  const results = [];
-
-  let matchDoc = regDoc.exec(content);
-
-  while (matchDoc != null) {
-    docs.push(matchDoc[1]);
-    content.replace(matchDoc[0],'');
-    matchDoc = regDoc.exec(content);
-  }
-
-  let matchExample = regExample.exec(content);
-
-  while (matchExample != null) {
-    examples.push(matchExample[1]);
-    content.replace(matchExample[0],'');
-    matchExample = regExample.exec(content);
-  }
-
-  let matchResult = regResult.exec(content);
-
-  while (matchResult != null) {
-    results.push(matchResult[1]);
-    content.replace(matchResult[0],'');
-    matchResult = regResult.exec(content);
-  }
-
-  console.log(content);
-
-
-
-  // console.log(content.match(regDoc));
-  // console.log(content.match(regExample));
-  // console.log(content.match(regResult));
-  //
-  // // Obtengo el bloque de documentación
-  // let apiDoc = content.substring(
-  //   content.lastIndexOf('<p>apiDoc&gt;</p>'),
-  //   content.lastIndexOf('<p>apiExample&gt;</p>'));
-  //
-  // apiDoc = (apiDoc.length > 0) ? apiDoc : content.replace('<p>apiDoc&gt;</p>','');
-  //
-  // // Obtengo los bloques de código
-  // let apiExamples = content.split('<p>apiExample&gt;</p>');
-  // apiExamples.shift();
-  //
-  // // console.log(apiDoc);
-
-  return `<article class="apiBlock">${content}</article>`;
+  return `<div class="apiCodeExample">${title}<pre id="${language}" v-pre data-lang="${language}" class="tabcontent"><code class="lang-${language}">${hl}</code></pre></div>`
 }
 
 async function install (hook, vm) {
-  hook.afterEach(function (html, next) {
-    const api = html.startsWith('<p>api&gt;</p>');
+  let api = false;
+
+  hook.beforeEach(function (content) {
+    api = content.startsWith('api>');
 
     if (api) {
-      const match = html.split('<p>apiBlock&gt;</p>');
-      let content = '';
+      content = content.substring(4);
 
-      match.shift();
-      match.forEach(function(block){
-        content += apiBlock(block);
-      });
+      const regExample = /(?!\`\`\`\s)```apiCode(\[(.*)?\])?(\((.*)?\))?((.*\n)+?)?```(?!\s\`\`\`)/gm;
+      const regUrl = /^(?!\`\`\`\s)apiUrl(\[(.*)?\])?(\((.*)?\))?((.*)+?)?(?!\s\`\`\`)$/gm;
 
-      next(content);
-    } else {
-      next(html);
+      let matchExample = regExample.exec(content);
+
+      while (matchExample != null) {
+        const example = apiCode(matchExample[5], matchExample[4], matchExample[2]);
+        content = content.replace(matchExample[0], example);
+        matchExample = regExample.exec(content);
+      }
+
+      let matchUrl = regUrl.exec(content);
+
+      while (matchUrl != null) {
+        let template = (`
+          <div class="apiUrl">
+            <span class="apiUrl__method ${matchUrl[2].toLowerCase()}">${matchUrl[2]}</span>
+            ${matchUrl[4]}
+          </div>
+        `).replace(/\n/g, "")
+          .replace(/[\t ]+\</g, "<")
+          .replace(/\>[\t ]+\</g, "><")
+          .replace(/\>[\t ]+$/g, ">")
+
+        content = content.replace(matchUrl[0], template);
+        matchUrl = regUrl.exec(content);
+      }
     }
+
+    return content;
   });
 
+  hook.afterEach(function (html, next) {
+    if (api) {
+      console.log(html);
+      const reg = /<p>apiBlock&gt;<\/p>((.*\n)+?)?<p>apiBlock\/&gt;<\/p>/gm;
+      let match = reg.exec(html);
+
+      while (match != null) {
+        const template = `
+          <article class="apiBlock">
+            <div class="apiDoc">${match[1]}</div>
+            <div class="apiCode"></div>
+          </article>
+        `;
+
+        console.log(match);
+
+        html = html.replace(match[0], template);
+        match = reg.exec(html);
+      }
+    }
+
+    next(html);
+  })
+
   hook.doneEach(function () {
-    document.querySelector('#main').className += " apiSection";
+    if (api) {
+      document.querySelector('body').className += ' apiSection';
+
+      const apiBlock = document.querySelectorAll('.apiBlock');  // Listado de todo los apiBlock
+
+      apiBlock.forEach(function(block){
+        const apiCodeExample = block.querySelectorAll('.apiCodeExample');
+
+        apiCodeExample.forEach(function(code) {
+          block.querySelector('.apiCode').appendChild(code);
+        })
+      })
+    } else {
+      document.querySelector('body').className = document.querySelector('body').className.replace(' apiSection', '');
+    }
   });
 }
 

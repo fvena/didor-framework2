@@ -2037,26 +2037,95 @@ pre > code.highlight {
     border-bottom: 2px solid #28a2b8;
     color: #3b4c53; }
 
-.apiSection {
+.apiSection .app-nav {
+  height: 3.2rem;
+  padding-right: 3.2rem; }
+
+.apiSection .app-nav > ul > li > p {
+  height: 3.2rem;
+  line-height: 3.2rem; }
+
+.apiSection .github-corner svg {
+  height: 3.2rem;
+  width: 3.2rem; }
+
+.apiSection .sidebar-toggle {
+  height: 3.2rem;
+  line-height: 3.2rem; }
+
+.apiSection .content {
+  padding-top: 4.8rem; }
+
+.apiSection .markdown-section {
   max-width: inherit !important;
-  padding-right: 0; }
-  .apiSection h2:before {
+  padding: 0; }
+  .apiSection .markdown-section h2:before {
     display: none; }
 
+.apiSection .docsify-pagination-container {
+  padding-right: 1.6rem;
+  margin-top: 0;
+  border-top: 0; }
+
 .apiBlock {
-  border-bottom: 1px solid #e7ebee;
-  padding-right: calc(50% + 1.6rem);
-  position: relative; }
-  .apiBlock:before {
-    content: '';
-    background-color: #2b303b;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: calc(100% + 1px);
-    border-bottom: 1px solid #363c4a;
-    z-index: 10; }
+  padding: 0;
+  position: relative;
+  display: flex; }
+
+.apiDoc,
+.apiCode {
+  width: 50%;
+  padding: 3.2rem 1.6rem 3.2rem; }
+
+.apiDoc {
+  border-bottom: 1px solid #e7ebee; }
+
+.apiCode {
+  background-color: #2b303b;
+  border-bottom: 1px solid #363c4a; }
+  .apiCode pre {
+    margin-top: 0;
+    padding: 0;
+    min-height: 3.2rem; }
+  .apiCode pre:after {
+    padding: 0; }
+
+.apiCode__title {
+  font-size: 0.85106rem;
+  line-height: 1.6rem;
+  color: #9da6aa;
+  border-bottom: 1px solid #363c4a;
+  margin-bottom: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 600; }
+
+.apiUrl {
+  margin-bottom: 3.2rem;
+  padding: 1.6rem;
+  background-color: #f5f6f8; }
+  .apiUrl a {
+    color: #3b4c53; }
+  .apiUrl a:hover {
+    color: #28a2b8; }
+
+.apiUrl__method {
+  font-size: 0.85106rem;
+  line-height: 1.6rem;
+  display: inline-block;
+  background-color: #9da6aa;
+  border-radius: 2px;
+  padding: 0 0.4rem;
+  margin-right: 0.4rem;
+  color: #ffffff;
+  font-weight: 600; }
+  .apiUrl__method.get {
+    background-color: #a2be97; }
+  .apiUrl__method.post {
+    background-color: #fac05e; }
+  .apiUrl__method.put {
+    background-color: #fac05e; }
+  .apiUrl__method.delete {
+    background-color: #ed6673; }
 
 /**
  * HELPERS
