@@ -4,12 +4,6 @@ api>
 apiBlock>
 # Título
 
-## Título 2
-
-Este es un texto de ejemplo:
-
-
-
 ```apiCode[html](Example Request)
 <p>hola mundo</p>
 <p>hola mundo</p>
@@ -18,12 +12,24 @@ Este es un texto de ejemplo:
 
 ```apiCode[json](Example Response)
 {
-  'key1': 'value1',
+  'key1': 'value1'
   key2: 3
 }
 ```
 
-apiBlock/>
+apiBlock>
+## Título 2
+
+Este es un texto de ejemplo:
+
+
+```apiExample
+{
+  "url": "http://jsonplaceholder.typicode.com/todos",
+  "method": "GET",
+  "params": ["id"]
+}
+```
 
 <!-- Bloque 2 -->
 apiBlock>
@@ -34,8 +40,14 @@ Este es un texto de ejemplo:
 
 Pepe
 
+```apiExample
+{
+  "url": "http://jsonplaceholder.typicode.com/todos",
+  "method": "GET",
+  "params": []
+}
+```
 
-apiBlock/>
 
 <!-- Bloque 3 -->
 apiBlock>
@@ -54,5 +66,3 @@ Este es un texto de ejemplo:
 ```apiCode
 console.log('hola mundo');
 ```
-
-apiBlock/>

@@ -1,4 +1,4 @@
-function apiCode(code, title, language){
+function apiCode(code, title, language) {
   language = (language)? language : 'js';
   title = (title)? `<div class="apiCode__title">${title}</div>`: '';
   code = code.trim().replace(/@DOCSIFY_QM@/g, '`');
@@ -10,6 +10,30 @@ function apiCode(code, title, language){
   return `<div class="apiCodeExample">${title}<pre id="${language}" v-pre data-lang="${language}" class="tabcontent"><code class="lang-${language}">${hl}</code></pre></div>`
 }
 
+function apiExample(data, id) {
+  let params = '';
+
+  data.params.forEach(function(param) {
+    params += `<label>${param}</label><input type="text" name="${param}">`;
+  });
+
+  const template = `
+    <div class="apiExample">
+      <form class="apiForm" data-url="${data.url}" data-method="${data.method}" data-pos="apiResult${id}">
+        ${params}
+        <button onclick="api(event)">Send</button>
+      </form>
+      <div id="apiResult${id}" class="apiExampleResult"></div>
+    </div>
+  `;
+
+  return template
+    .replace(/\n/g, "")
+    .replace(/[\t ]+\</g, "<")
+    .replace(/\>[\t ]+\</g, "><")
+    .replace(/\>[\t ]+$/g, ">");
+}
+
 async function install (hook, vm) {
   let api = false;
 
@@ -19,17 +43,22 @@ async function install (hook, vm) {
     if (api) {
       content = content.substring(4);
 
-      const regExample = /(?!\`\`\`\s)```apiCode(\[(.*)?\])?(\((.*)?\))?((.*\n)+?)?```(?!\s\`\`\`)/gm;
+      const regCode = /(?!\`\`\`\s)```apiCode(\[(.*)?\])?(\((.*)?\))?((.*\n)+?)?```(?!\s\`\`\`)/gm;
+      const regExample = /(?!\`\`\`\s)```apiExample((.*\n)+?)?```(?!\s\`\`\`)/gm;
       const regUrl = /^(?!\`\`\`\s)apiUrl(\[(.*)?\])?(\((.*)?\))?((.*)+?)?(?!\s\`\`\`)$/gm;
 
-      let matchExample = regExample.exec(content);
 
-      while (matchExample != null) {
-        const example = apiCode(matchExample[5], matchExample[4], matchExample[2]);
-        content = content.replace(matchExample[0], example);
-        matchExample = regExample.exec(content);
+      // apiCode
+      let matchCode = regCode.exec(content);
+
+      while (matchCode != null) {
+        const code = apiCode(matchCode[5], matchCode[4], matchCode[2]);
+        content = content.replace(matchCode[0], code);
+        matchCode = regCode.exec(content);
       }
 
+
+      // apiUrl
       let matchUrl = regUrl.exec(content);
 
       while (matchUrl != null) {
@@ -46,33 +75,42 @@ async function install (hook, vm) {
         content = content.replace(matchUrl[0], template);
         matchUrl = regUrl.exec(content);
       }
+
+
+      // apiExample
+      let matchExample = regExample.exec(content);
+      let pos = 0;
+
+      while (matchExample !== null) {
+        const example = apiExample(JSON.parse(matchExample[1]), pos);
+        content = content.replace(matchExample[0], example);
+        pos++;
+        matchExample = regExample.exec(content);
+      }
     }
 
     return content;
   });
 
   hook.afterEach(function (html, next) {
-    if (api) {
-      console.log(html);
-      const reg = /<p>apiBlock&gt;<\/p>((.*\n)+?)?<p>apiBlock\/&gt;<\/p>/gm;
-      let match = reg.exec(html);
+    let content = html;
 
-      while (match != null) {
-        const template = `
+    if (api) {
+      const apiBlocks = html.split('<p>apiBlock&gt;</p>');
+      content = '';
+
+      apiBlocks.shift();
+      apiBlocks.forEach(function (apiBlock) {
+        content += `
           <article class="apiBlock">
-            <div class="apiDoc">${match[1]}</div>
+            <div class="apiDoc">${apiBlock}</div>
             <div class="apiCode"></div>
           </article>
         `;
-
-        console.log(match);
-
-        html = html.replace(match[0], template);
-        match = reg.exec(html);
-      }
+      });
     }
 
-    next(html);
+    next(content);
   })
 
   hook.doneEach(function () {
@@ -82,7 +120,7 @@ async function install (hook, vm) {
       const apiBlock = document.querySelectorAll('.apiBlock');  // Listado de todo los apiBlock
 
       apiBlock.forEach(function(block){
-        const apiCodeExample = block.querySelectorAll('.apiCodeExample');
+        const apiCodeExample = block.querySelectorAll('.apiCodeExample, .apiExample');
 
         apiCodeExample.forEach(function(code) {
           block.querySelector('.apiCode').appendChild(code);
