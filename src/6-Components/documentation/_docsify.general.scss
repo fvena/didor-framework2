@@ -66,6 +66,10 @@ main.hidden {
   .sidebar-toggle {
     display: none;
   }
+
+  .content {
+    left: 0;
+  }
 }
 
 @include media(portrait) {

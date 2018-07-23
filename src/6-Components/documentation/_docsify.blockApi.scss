@@ -50,7 +50,7 @@
 }
 
 .apiDoc {
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid gray(gray6);
 }
 
 
@@ -99,4 +99,93 @@
   &.post { background-color: notify(warning); }
   &.put { background-color: notify(warning); }
   &.delete { background-color: notify(danger); }
+}
+
+.apiForm {
+  margin-bottom: double($space);
+}
+
+.apiForm__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  margin-bottom: halve($space);
+  border-radius: $border-radius;
+  background-color: rgba(255,255,255,.05);
+}
+
+.apiForm__header__url {
+  flex: 1 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  a { color: gray(gray3); }
+}
+
+.apiForm__header__method,
+.apiForm__header__submit {
+  @include fontsize(eta);
+  font-weight: font($body-type, bold);
+  text-transform: uppercase;
+  height: 100%;
+  color: gray(white);
+  padding: 0 halve($space);
+}
+
+.apiForm__header__method {
+  background-color: notify(success);
+  border-radius: $border-radius 0 0 $border-radius;
+  margin-right: halve($space);
+
+}
+
+.apiForm__header__submit {
+  margin-left: $space;
+  background-color: brand();
+  border: none;
+  border-radius: 0 $border-radius $border-radius 0;
+  outline: none;
+  cursor: pointer;
+}
+
+.apiForm__row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  background-color: rgba(255,255,255,.05);
+  margin-bottom: 1px;
+
+  &:first-of-type {
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+
+  &:last-of-type {
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+  }
+}
+
+.apiForm__name {
+  flex: 1 1 0%;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: ellipsis;
+  color: gray(gray3);
+}
+
+.apiForm__input {
+  flex: 1 1 0%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: none;
+  border: none !important;
+  color: gray(gray3);
+  outline: none;
 }

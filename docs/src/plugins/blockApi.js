@@ -13,15 +13,31 @@ function apiCode(code, title, language) {
 function apiExample(data, id) {
   let params = '';
 
+  // for (param in data.params) {
+  //   params += `<div class="apiForm__row">
+  //               <input class="apiForm__checkbox" type="checkbox" value="">
+  //               <div class="apiForm__name">${param}</div>
+  //               <input class="apiForm__input" type="text" name="${param}" value="${data.params[param]}">
+  //             </div>`;
+  // }
+
   data.params.forEach(function(param) {
-    params += `<label>${param}</label><input type="text" name="${param}">`;
+    params += `<div class="apiForm__row">
+                <input class="apiForm__checkbox" type="checkbox" ${(param.required)? "checked disabled" : "" }>
+                <div class="apiForm__name">${param.name}</div>
+                <input class="apiForm__input" type="text" name="${param.name}" value="${param.default}">
+              </div>`;
   });
 
   const template = `
     <div class="apiExample">
-      <form class="apiForm" data-url="${data.url}" data-method="${data.method}" data-pos="apiResult${id}">
+      <form class="apiForm" data-url="${data.url}" data-method="${data.method}" data-pos="apiResult${id}" autocomplete="off">
+        <div class="apiForm__header">
+          <div class="apiForm__header__method">${data.method}</div>
+          <div class="apiForm__header__url">${data.url}</div>
+          <button class="apiForm__header__submit" onclick="api(event)">Probar</button>
+        </div>
         ${params}
-        <button onclick="api(event)">Send</button>
       </form>
       <div id="apiResult${id}" class="apiExampleResult"></div>
     </div>
