@@ -10,8 +10,8 @@
   }
 
   .github-corner svg {
-    height: double($space);
     width: double($space);
+    height: double($space);
   }
 
   .sidebar-toggle {
@@ -46,7 +46,7 @@
 .apiDoc,
 .apiCode {
   width: 50%;
-  padding: double($space) $space double($space);
+  padding: double($space) $space;
 }
 
 .apiDoc {
@@ -56,12 +56,13 @@
 
 .apiCode {
   background-color: #2b303b;
-  border-bottom: 1px solid lighten(#2b303b,5%);
+  border-bottom: 1px solid lighten(#2b303b, 5%);
 
   pre {
     margin-top: 0;
     padding: 0;
     min-height: $space;
+    max-height: 495px;
   }
 
   pre:after { padding: 0;}
@@ -117,6 +118,7 @@
 }
 
 .apiForm__header__url {
+  @include fontsize(eta);
   flex: 1 1;
   white-space: nowrap;
   overflow: hidden;
@@ -129,35 +131,38 @@
 .apiForm__header__submit {
   @include fontsize(eta);
   font-weight: font($body-type, bold);
-  text-transform: uppercase;
   height: 100%;
-  color: gray(white);
   padding: 0 halve($space);
 }
 
 .apiForm__header__method {
-  background-color: notify(success);
+  background-color: rgba(255, 255, 255, .1);
   border-radius: $border-radius 0 0 $border-radius;
   margin-right: halve($space);
-
+  color: gray(gray4);
+  line-height: 2rem;
+  text-transform: uppercase;
 }
 
 .apiForm__header__submit {
   margin-left: $space;
   background-color: brand();
-  border: none;
+  color: gray(white);
+  border: 0;
   border-radius: 0 $border-radius $border-radius 0;
   outline: none;
   cursor: pointer;
 }
 
 .apiForm__row {
+  @include fontsize(theta);
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   height: 2rem;
   background-color: rgba(255,255,255,.05);
+  font-family: font($monospace-type, font-family);
   margin-bottom: 1px;
 
   &:first-of-type {
@@ -172,15 +177,47 @@
 }
 
 .apiForm__name {
-  flex: 1 1 0%;
+  flex: 1 1 0;
   white-space: nowrap;
   overflow: visible;
   text-overflow: ellipsis;
   color: gray(gray3);
+  margin-left: halve($space);
+  position: relative;
+
+  [type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked {
+    width: 2rem;
+    height: 2rem;
+    top: -.2rem;
+    left: -.2rem;
+  }
+
+  [type="checkbox"]:not(:checked) + label:before,
+  [type="checkbox"]:checked + label:before {
+    background-color: rgba(255,255,255,.35);
+  }
+
+  [type="checkbox"]:disabled:not(:checked) + label:before,
+  [type="checkbox"]:disabled:checked + label:before {
+    background-color: rgba(255,255,255,.1);
+  }
+
+  [type="checkbox"]:disabled:checked + label:after {
+    color: gray(gray2);
+  }
+
+  [type="checkbox"]:disabled + label {
+    color: gray(gray2);
+  }
+
+  label:hover:before {
+    background-color: rgba(255,255,255,.5);
+  }
 }
 
 .apiForm__input {
-  flex: 1 1 0%;
+  flex: 1 1 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

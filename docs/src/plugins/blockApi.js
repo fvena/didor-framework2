@@ -12,24 +12,29 @@ function apiCode(code, title, language) {
 
 function apiExample(data, id) {
   let params = '';
-
-  // for (param in data.params) {
-  //   params += `<div class="apiForm__row">
-  //               <input class="apiForm__checkbox" type="checkbox" value="">
-  //               <div class="apiForm__name">${param}</div>
-  //               <input class="apiForm__input" type="text" name="${param}" value="${data.params[param]}">
-  //             </div>`;
-  // }
+  let paramsRow = '';
+  let template = '';
 
   data.params.forEach(function(param) {
     params += `<div class="apiForm__row">
-                <input class="apiForm__checkbox" type="checkbox" ${(param.required)? "checked disabled" : "" }>
-                <div class="apiForm__name">${param.name}</div>
-                <input class="apiForm__input" type="text" name="${param.name}" value="${param.default}">
+                <div class="apiForm__name">
+                  <input type="checkbox" ${(param.required)? "checked disabled" : "" }>
+                  <label>${param.name}</label>
+                </div>
+                <input class="apiForm__input" type="text" name="${param.name}" value="${(param.default)? param.default : ''}" placeholder="null">
               </div>`;
+
+    paramsRow += `
+      <tr>
+        <td><code>${param.name}</code></td>
+        <td><code>${param.type}</code></td>
+        <td>${param.description}</td>
+        <td>${param.default}</td>
+      </tr>
+    `;
   });
 
-  const template = `
+  template += `
     <div class="apiExample">
       <form class="apiForm" data-url="${data.url}" data-method="${data.method}" data-pos="apiResult${id}" autocomplete="off">
         <div class="apiForm__header">
@@ -42,6 +47,26 @@ function apiExample(data, id) {
       <div id="apiResult${id}" class="apiExampleResult"></div>
     </div>
   `;
+
+  if (paramsRow) {
+    template += `
+      <table>
+        <thead>
+          <tr>
+            <th>Parámetro</th>
+            <th>Tipo</th>
+            <th>Descripción</th>
+            <th>Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${paramsRow}
+        </tbody>
+      </table>
+    `;
+  }
+
+  console.log(template);
 
   return template
     .replace(/\n/g, "")

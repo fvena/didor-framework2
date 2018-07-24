@@ -2048,8 +2048,8 @@ pre > code.highlight {
   line-height: 3.2rem; }
 
 .apiSection .github-corner svg {
-  height: 3.2rem;
-  width: 3.2rem; }
+  width: 3.2rem;
+  height: 3.2rem; }
 
 .apiSection .sidebar-toggle {
   height: 3.2rem;
@@ -2077,7 +2077,7 @@ pre > code.highlight {
 .apiDoc,
 .apiCode {
   width: 50%;
-  padding: 3.2rem 1.6rem 3.2rem; }
+  padding: 3.2rem 1.6rem; }
 
 .apiDoc {
   border-bottom: 1px solid #f5f6f8; }
@@ -2088,7 +2088,8 @@ pre > code.highlight {
   .apiCode pre {
     margin-top: 0;
     padding: 0;
-    min-height: 1.6rem; }
+    min-height: 1.6rem;
+    max-height: 495px; }
   .apiCode pre:after {
     padding: 0; }
 
@@ -2143,6 +2144,8 @@ pre > code.highlight {
   background-color: rgba(255, 255, 255, 0.05); }
 
 .apiForm__header__url {
+  font-size: 0.85106rem;
+  line-height: 1.6rem;
   flex: 1 1;
   white-space: nowrap;
   overflow: hidden;
@@ -2155,31 +2158,36 @@ pre > code.highlight {
   font-size: 0.85106rem;
   line-height: 1.6rem;
   font-weight: 600;
-  text-transform: uppercase;
   height: 100%;
-  color: #ffffff;
   padding: 0 0.8rem; }
 
 .apiForm__header__method {
-  background-color: #a2be97;
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 5px 0 0 5px;
-  margin-right: 0.8rem; }
+  margin-right: 0.8rem;
+  color: #cfd6da;
+  line-height: 2rem;
+  text-transform: uppercase; }
 
 .apiForm__header__submit {
   margin-left: 1.6rem;
   background-color: #28a2b8;
-  border: none;
+  color: #ffffff;
+  border: 0;
   border-radius: 0 5px 5px 0;
   outline: none;
   cursor: pointer; }
 
 .apiForm__row {
+  font-size: 0.72431rem;
+  line-height: 1.6rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   height: 2rem;
   background-color: rgba(255, 255, 255, 0.05);
+  font-family: "Fira Code","Roboto Mono", Monaco, courier, monospace;
   margin-bottom: 1px; }
   .apiForm__row:first-of-type {
     border-top-left-radius: 5px;
@@ -2189,14 +2197,34 @@ pre > code.highlight {
     border-bottom-right-radius: 5px; }
 
 .apiForm__name {
-  flex: 1 1 0%;
+  flex: 1 1 0;
   white-space: nowrap;
   overflow: visible;
   text-overflow: ellipsis;
-  color: #9da6aa; }
+  color: #9da6aa;
+  margin-left: 0.8rem;
+  position: relative; }
+  .apiForm__name [type="checkbox"]:not(:checked),
+  .apiForm__name [type="checkbox"]:checked {
+    width: 2rem;
+    height: 2rem;
+    top: -.2rem;
+    left: -.2rem; }
+  .apiForm__name [type="checkbox"]:not(:checked) + label:before,
+  .apiForm__name [type="checkbox"]:checked + label:before {
+    background-color: rgba(255, 255, 255, 0.35); }
+  .apiForm__name [type="checkbox"]:disabled:not(:checked) + label:before,
+  .apiForm__name [type="checkbox"]:disabled:checked + label:before {
+    background-color: rgba(255, 255, 255, 0.1); }
+  .apiForm__name [type="checkbox"]:disabled:checked + label:after {
+    color: #6f777b; }
+  .apiForm__name [type="checkbox"]:disabled + label {
+    color: #6f777b; }
+  .apiForm__name label:hover:before {
+    background-color: rgba(255, 255, 255, 0.5); }
 
 .apiForm__input {
-  flex: 1 1 0%;
+  flex: 1 1 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2205,6 +2233,123 @@ pre > code.highlight {
   color: #9da6aa;
   outline: none; }
 
+/*----------------------------------------------------------------------------*\
+  CHECKBOX
+\*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*\
+  TEMPLATE
+
+  <div>
+    <input type="checkbox" id="test1" />
+    <label for="test1">Red</label>
+  </div>
+\*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*\
+  VARIABLES
+\*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*\
+  COMPONENTS
+\*----------------------------------------------------------------------------*/
+/*
+ * Base for label styling
+ */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  bottom: 0;
+  top: -0.8rem;
+  left: -0.8rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  margin: 0;
+  opacity: 0;
+  z-index: 10;
+  cursor: pointer; }
+
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: calc(1.6rem + 0.4rem);
+  outline: none;
+  height: 1.6rem;
+  line-height: 1.6rem;
+  margin-bottom: 0; }
+
+/*
+ * Checkbox aspect
+ */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 18px;
+  height: 18px;
+  border: 0;
+  background-color: white;
+  border-radius: 4px;
+  outline: none; }
+
+/*
+ * Checked mark aspect
+ */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  transition: all .2s;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3C?xml version='1.0' encoding='UTF-8'?%3E %3Csvg version='1.1' viewBox='0 0 8 6' width='11px' xmlns='http://www.w3.org/2000/svg'%3E %3Ctitle%3EPath 63 Copy%3C/title%3E %3Cdesc%3ECreated with Sketch.%3C/desc%3E %3Cg fill='none' fill-rule='evenodd' transform='translate(-5 -6)'%3E %3Cpolyline points='6 8.9399 8.03 10.97 12 7' stroke='#2b303b' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E %3C/g%3E %3C/svg%3E"); }
+
+/*
+ * Checked mark aspect changes
+ */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0); }
+
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1); }
+
+/*
+ * Disabled checkbox
+ */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd; }
+
+[type="checkbox"]:disabled:checked + label:after {
+  color: #999; }
+
+[type="checkbox"]:disabled + label {
+  color: #aaa; }
+
+/*
+ * Accessibility
+ */
+/*
+ * Hover style just for information
+ */
+label:hover:before,
+label:active:before,
+label:focus:before {
+  outline: none; }
+
+/*----------------------------------------------------------------------------*\
+  STATES
+\*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*\
+  RESPONSIVE
+\*----------------------------------------------------------------------------*/
 /**
  * HELPERS
  *

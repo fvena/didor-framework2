@@ -4,8 +4,11 @@ function getParams(form, method){
   for (let i = 0; i < form.length; i++) {
     let input = form.elements[i];
 
-    if (input.type === 'text'){
-      params[input.name] = input.value;
+    if (input.type === 'checkbox' && input.checked) {
+      let name = input.parentNode.nextSibling.name;
+      let value = input.parentNode.nextSibling.value;
+
+      params[name] = value;
     }
   }
 
@@ -26,7 +29,6 @@ async function api(event) {
   const id = form.getAttribute('data-pos');
   const params = await getParams(form, method);
 
-
   document.getElementById(id).innerHTML = 'Cargando...'
 
 
@@ -39,8 +41,6 @@ async function api(event) {
     .catch(function (error) {
       result = generateErrorHTMLOutput(error);
     });
-
-  console.log(result);
 
   document.getElementById(id).innerHTML = result;
 }
