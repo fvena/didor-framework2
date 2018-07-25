@@ -997,7 +997,7 @@ pre {
   src: url("../fonts/didor.eot?#iefix") format("embedded-opentype"), url("../fonts/didor.woff2") format("woff2"), url("../fonts/didor.woff") format("woff"), url("../fonts/didor.ttf") format("truetype"), url("../fonts/didor.svg#didor") format("svg"); }
 
 [class^='icon-'],
-[class*=' icon-'] {
+[class*=' icon-'], .markdown-section .docsify-copy-code-button:before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'didor' !important;
   font-style: normal;
@@ -1010,13 +1010,13 @@ pre {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased; }
 
-.icon-desktop:before {
+.icon-clipboard:before {
   content: '\ea01'; }
 
-.icon-lap:before {
+.icon-desktop:before {
   content: '\ea02'; }
 
-.icon-lapi:before {
+.icon-lap:before {
   content: '\ea03'; }
 
 .icon-large:before {
@@ -1239,6 +1239,12 @@ main.hidden {
   body.close .sidebar {
     transform: translateX(-300px); } }
 
+.markdown-section pre:after {
+  right: 1.6rem;
+  padding: 0 0.8rem;
+  top: 0.4rem;
+  line-height: 1.8rem; }
+
 .markdown-section .docsify-pagination-container {
   margin: 4.8rem 0 1.6rem;
   border-top: 1px solid #e7ebee; }
@@ -1258,6 +1264,31 @@ main.hidden {
 
 .markdown-section .pagination-item:not(:last-child):hover a .pagination-item-label {
   opacity: 1 !important; }
+
+.markdown-section .docsify-copy-code-button {
+  opacity: 1;
+  background-color: inherit;
+  text-indent: -9999px;
+  width: 1.6rem;
+  height: 1.6rem;
+  padding: 0;
+  top: 0.4rem;
+  right: 0.4rem; }
+  .markdown-section .docsify-copy-code-button:before {
+    content: "";
+    font-size: 17px;
+    color: #9da6aa;
+    text-indent: 0;
+    float: left;
+    padding: 0 0.4rem;
+    line-height: 1.6rem; }
+  .markdown-section .docsify-copy-code-button:after {
+    text-indent: 0;
+    margin: 0;
+    background-color: rgba(65, 72, 86, 0.8);
+    color: #e7ebee; }
+  .markdown-section .docsify-copy-code-button:hover:before {
+    color: #e7ebee; }
 
 .app-nav {
   position: absolute;
@@ -1433,6 +1464,27 @@ main.hidden {
   margin-bottom: 1.6rem;
   border-top: 1px solid #e7ebee; }
 
+.app-sub-sidebar {
+  border-top: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important; }
+  .app-sub-sidebar li {
+    margin-left: 0.8rem; }
+  .app-sub-sidebar li:last-of-type a {
+    padding-bottom: 0.8rem; }
+  .app-sub-sidebar .apiMethod {
+    font-size: .6em;
+    bottom: .2em;
+    position: relative;
+    margin-right: 4px;
+    padding: 0;
+    width: 45px;
+    text-align: center; }
+
+.section-link:after {
+  left: -2rem !important;
+  width: calc(100% + 3.6rem) !important; }
+
 .sidebar-toggle {
   position: fixed;
   top: 0;
@@ -1479,6 +1531,9 @@ main.hidden {
     .sidebar-nav li.active a:after {
       left: -2.4rem;
       width: calc(100% + 4.8rem); }
+  .section-link:after {
+    left: -2.8rem !important;
+    width: calc(100% + 5.2rem) !important; }
   .sidebar-toggle {
     left: 300px; } }
 
@@ -2082,6 +2137,26 @@ pre > code.highlight {
 .apiDoc {
   border-bottom: 1px solid #f5f6f8; }
 
+.apiMethod {
+  font-size: .8em;
+  height: 1.6em;
+  line-height: 1.6em;
+  display: inline-block;
+  background-color: #9da6aa;
+  border-radius: 2px;
+  padding: 0 0.4rem;
+  margin-right: 0.4rem;
+  color: #ffffff;
+  font-weight: 600; }
+  .apiMethod.get {
+    background-color: #a2be97; }
+  .apiMethod.post {
+    background-color: #fac05e; }
+  .apiMethod.put {
+    background-color: #fac05e; }
+  .apiMethod.delete {
+    background-color: #ed6673; }
+
 .apiCode {
   background-color: #2b303b;
   border-bottom: 1px solid #363c4a; }
@@ -2232,6 +2307,13 @@ pre > code.highlight {
   border: none !important;
   color: #9da6aa;
   outline: none; }
+
+@media screen and (max-width: 56.1875em) {
+  .apiBlock {
+    flex-direction: column; }
+  .apiDoc,
+  .apiCode {
+    width: 100%; } }
 
 /*----------------------------------------------------------------------------*\
   CHECKBOX

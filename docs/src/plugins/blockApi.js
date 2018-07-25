@@ -50,23 +50,23 @@ function apiExample(data, id) {
 
   if (paramsRow) {
     template += `
-      <table>
-        <thead>
-          <tr>
-            <th>Parámetro</th>
-            <th>Tipo</th>
-            <th>Descripción</th>
-            <th>Default</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${paramsRow}
-        </tbody>
-      </table>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Parámetro</th>
+              <th>Tipo</th>
+              <th>Descripción</th>
+              <th>Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${paramsRow}
+          </tbody>
+        </table>
+      </div>
     `;
   }
-
-  console.log(template);
 
   return template
     .replace(/\n/g, "")
@@ -87,7 +87,7 @@ async function install (hook, vm) {
       const regCode = /(?!\`\`\`\s)```apiCode(\[(.*)?\])?(\((.*)?\))?((.*\n)+?)?```(?!\s\`\`\`)/gm;
       const regExample = /(?!\`\`\`\s)```apiExample((.*\n)+?)?```(?!\s\`\`\`)/gm;
       const regUrl = /^(?!\`\`\`\s)apiUrl(\[(.*)?\])?(\((.*)?\))?((.*)+?)?(?!\s\`\`\`)$/gm;
-
+      const regTitleMethod = /## (GET|POST|PUT|DELETE|PATCH)+?/gm;
 
       // apiCode
       let matchCode = regCode.exec(content);
@@ -128,6 +128,16 @@ async function install (hook, vm) {
         pos++;
         matchExample = regExample.exec(content);
       }
+
+
+      // apiTitleMethod
+      let matchTitleMethod = regTitleMethod.exec(content);
+
+      while (matchTitleMethod !== null) {
+        const titleMethod = `## <span class="apiMethod ${matchTitleMethod[1].toLowerCase()}">${matchTitleMethod[1]}</span>`;
+        content = content.replace(matchTitleMethod[0], titleMethod);
+        matchTitleMethod = regTitleMethod.exec(content);
+      }
     }
 
     return content;
@@ -149,6 +159,10 @@ async function install (hook, vm) {
           </article>
         `;
       });
+
+      window.$docsify.subMaxLevel = 2;
+    } else {
+      window.$docsify.subMaxLevel = 0;
     }
 
     next(content);

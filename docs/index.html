@@ -36,6 +36,7 @@
   <script src="./src/scripts/apiRest.js"></script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
   <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="//unpkg.com/docsify-copy-code"></script>
   <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-scss.min.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-markdown.min.js"></script>
@@ -46,5 +47,19 @@
   <script src="./src/plugins/blockExample.js"></script>
   <script src="./src/plugins/blockApi.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <script>
+    function login(url, email, password) {
+      axios.post(url, { email, password})
+        .then(function (response) {
+          localStorage.setItem("airzoneDoc-token", response.data.body.authToken);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+
+    login('http://airzoneservice.airzonesl.es:3080/api/auth/v1/login', 'fvena@altracorporacion.es', 'foobarfoo');
+  </script>
 </body>
 </html>

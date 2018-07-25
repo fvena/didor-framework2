@@ -1,4 +1,7 @@
-* [Api](api.md)
+* Api
+  * [auth](auth.md)
+  * [todo](api.md)
+  * [user](user.md)
 
 * Plantilla
   * [Introducción](/)

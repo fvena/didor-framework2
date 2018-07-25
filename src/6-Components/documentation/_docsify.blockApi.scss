@@ -53,6 +53,24 @@
   border-bottom: 1px solid gray(gray6);
 }
 
+.apiMethod {
+  font-size: .8em;
+  height: 1.6em;
+  line-height: 1.6em;
+  display: inline-block;
+  background-color: gray(gray3);
+  border-radius: 2px;
+  padding: 0 quarter($space);
+  margin-right: quarter($space);
+  color: gray(white);
+  font-weight: font($body-type, bold);
+
+  &.get { background-color: notify(success); }
+  &.post { background-color: notify(warning); }
+  &.put { background-color: notify(warning); }
+  &.delete { background-color: notify(danger); }
+}
+
 
 .apiCode {
   background-color: #2b303b;
@@ -225,4 +243,11 @@
   border: none !important;
   color: gray(gray3);
   outline: none;
+}
+
+
+@include media(portrait) {
+  .apiBlock { flex-direction: column; }
+  .apiDoc,
+  .apiCode { width: 100%; }
 }

@@ -2,18 +2,18 @@ api>
 
 <!-- Bloque 1 -->
 apiBlock>
-# Tareas
+# Todo
 
 
 
 apiBlock>
-## Obtener todas las tareas
+## GET /todos
 
 Devuelve un listado con todas las tareas.
 
 ```apiExample
 {
-  "url": "http://jsonplaceholder.typicode.com/todos",
+  "url": "http://airzoneservice.airzonesl.es:3080/api/v1/customers/enums",
   "method": "GET",
   "params": []
 }
@@ -23,7 +23,7 @@ Devuelve un listado con todas las tareas.
 <!-- Bloque 2 -->
 apiBlock>
 
-## Obtener una tarea por :ID
+## GET /todos/{Id}
 
 Devuelve todos los datos de una tarea mediante su `:id`.
 
@@ -38,20 +38,6 @@ Devuelve todos los datos de una tarea mediante su `:id`.
       "type": "number",
       "description": "Id de la tarea",
       "default": null    
-    },
-    {
-      "name": "userId",
-      "required": false,
-      "type": "text",
-      "description": "Id del usuario",
-      "default": null   
-    },
-    {
-      "name": "content",
-      "required": false,
-      "type": "text",
-      "description": "Contenido de la tarea",
-      "default": null     
     }
   ]
 }
@@ -61,9 +47,9 @@ Devuelve todos los datos de una tarea mediante su `:id`.
 <!-- Bloque 3 -->
 apiBlock>
 
-## Título 3
+## POST /todos
 
-apiUrl[GET](http://jsonplaceholder.typicode.com/todos)
+apiUrl[GET](http://airzoneservice.airzonesl.es:3080/api/v1/customers/enums)
 
 Este es un texto de ejemplo:
 
@@ -84,5 +70,44 @@ Este es un texto de ejemplo:
 {
   'key1': 'value1'
   key2: 3
+}
+```
+
+apiBlock>
+## PUT /todos/{Id}
+
+Devuelve un listado con todas las tareas.
+
+```apiExample
+{
+  "url": "http://jsonplaceholder.typicode.com/todos",
+  "method": "GET",
+  "params": []
+}
+```
+
+apiBlock>
+## PATCH /todos/{Id}
+
+Devuelve un listado con todas las tareas.
+
+```apiExample
+{
+  "url": "http://jsonplaceholder.typicode.com/todos",
+  "method": "GET",
+  "params": []
+}
+```
+
+apiBlock>
+## DELETE /todos/{Id}
+
+Devuelve un listado con todas las tareas.
+
+```apiExample
+{
+  "url": "http://jsonplaceholder.typicode.com/todos",
+  "method": "GET",
+  "params": []
 }
 ```

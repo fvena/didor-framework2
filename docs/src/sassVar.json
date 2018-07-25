@@ -41,9 +41,9 @@
     }
   },
   "icons": [
+    "icon-clipboard",
     "icon-desktop",
     "icon-lap",
-    "icon-lapi",
     "icon-large",
     "icon-palm",
     "icon-small"

@@ -28,21 +28,40 @@ async function api(event) {
   const method = form.getAttribute('data-method').toLowerCase();
   const id = form.getAttribute('data-pos');
   const params = await getParams(form, method);
-
-  document.getElementById(id).innerHTML = 'Cargando...'
-
+  const token = localStorage.getItem("airzoneDoc-token");
 
   let result = '';
 
-  await axios[method](url, params)
-    .then(function (response) {
-      result = generateSuccessHTMLOutput(response);
+  document.getElementById(id).innerHTML = 'Cargando...'
+
+  if (method === 'get') {
+    await axios[method](url, {
+      headers: {
+        Authorization: 'Bearer ' + token,
+        'Content-Type': 'application/json'
+      }
     })
-    .catch(function (error) {
-      result = generateErrorHTMLOutput(error);
-    });
+      .then(function (response) {
+        result = generateSuccessHTMLOutput(response);
+      })
+      .catch(function (error) {
+        result = generateErrorHTMLOutput(error);
+      });
+  } else {
+    await axios[method](url, params, {
+      headers: { Authorization: "Bearer " + token }
+    })
+      .then(function (response) {
+        result = generateSuccessHTMLOutput(response);
+      })
+      .catch(function (error) {
+        result = generateErrorHTMLOutput(error);
+      });
+  }
 
   document.getElementById(id).innerHTML = result;
+
+  Prism.highlightAll();
 }
 
 
@@ -57,8 +76,7 @@ function generateSuccessHTMLOutput(response) {
 
 
 function generateErrorHTMLOutput(error) {
-  return  `<h4>Result</h4>
-           <div class="apiCode__title">Error Message:</div>
+  return  `<div class="apiCode__title">Error Message:</div>
            <pre data-lang="json"><code class="lang-json">${error.message}</code></pre>
            <div class="apiCode__title">Error Status:</div>
            <pre data-lang="json"><code class="lang-json">${error.response.status} ${error.response.statusText}</code></pre>

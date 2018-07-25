@@ -4,9 +4,9 @@
  * Estilos para los iconos
  */
 
-$icon-desktop: '\ea01';
-$icon-lap: '\ea02';
-$icon-lapi: '\ea03';
+$icon-clipboard: '\ea01';
+$icon-desktop: '\ea02';
+$icon-lap: '\ea03';
 $icon-large: '\ea04';
 $icon-palm: '\ea05';
 $icon-small: '\ea06';
@@ -47,9 +47,9 @@ $icon-small: '\ea06';
 }
 
 
-.icon-desktop:before { content: '\ea01'; }
-.icon-lap:before { content: '\ea02'; }
-.icon-lapi:before { content: '\ea03'; }
+.icon-clipboard:before { content: '\ea01'; }
+.icon-desktop:before { content: '\ea02'; }
+.icon-lap:before { content: '\ea03'; }
 .icon-large:before { content: '\ea04'; }
 .icon-palm:before { content: '\ea05'; }
 .icon-small:before { content: '\ea06'; }

@@ -75,6 +75,30 @@
   }
 }
 
+.app-sub-sidebar {
+  border-top: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+
+  li { margin-left: halve($space); }
+  li:last-of-type a { padding-bottom: halve($space); }
+
+  .apiMethod {
+    font-size: .6em;
+    bottom: .2em;
+    position: relative;
+    margin-right: 4px;
+    padding: 0;
+    width: 45px;
+    text-align: center;
+  }
+}
+
+.section-link:after {
+  left: -(double($space) / 2) - quarter($space) !important;
+  width: calc(100% + #{double($space) + quarter($space)}) !important;
+}
+
 .sidebar-toggle {
   position: fixed;
   top: 0;
@@ -128,6 +152,11 @@
       left: -(triple($space) / 2);
       width: calc(100% + #{triple($space)});
     }
+  }
+
+  .section-link:after {
+    left: -(triple($space) / 2) - quarter($space) !important;
+    width: calc(100% + #{triple($space) + quarter($space)}) !important;
   }
 
   .sidebar-toggle { left: $sidebar-width-large; }
