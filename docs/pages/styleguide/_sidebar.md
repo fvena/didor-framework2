@@ -9,6 +9,7 @@
   * [Iconos](templateIcon.md)
   * [Demo](templateDemo.md)
   * [Tabs Code](templateTabs.md)
+  * [Api](templateApi.md)
 
 * Diseño
   * [Colores](colors.md)

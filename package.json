@@ -6,7 +6,7 @@
   "author": "Francisco Vena <fvena32@gmail.com> (http://www.fvena.com/)",
   "license": "MIT",
   "scripts": {
-    "docs": "docsify serve ./docs",
+    "docs": "docsify serve ./docs --port 3001",
     "dev": "npm run lint:scss && npm run icons && npm run sassVar && npm run scss",
     "scss": "node-sass -w src/didor.scss -o docs/src/stylesheets --sourceMap docs/src/stylesheets",
     "lint:scss": "sass-lint --config .sass-lint.yml -v -q",

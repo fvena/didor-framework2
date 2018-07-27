@@ -2,6 +2,23 @@ $header-height: triple($space);
 $sidebar-width: 240px;
 $sidebar-width-large: 300px;
 
+// App Nav Contendor
+.app-nav {
+  // position: absolute;
+  // top: 0;
+  // right: 0;
+  // width: calc(100% - #{$sidebar-width} - #{double($space)});
+  height: $header-height;
+  padding-right: triple($space);
+  background-color: rgba(255, 255, 255, .9);
+  text-align: right;
+  z-index: 2;
+
+  // max-width: $base-wrappers-width;
+  // margin: 0 auto;
+  // padding-left: $sidebar-width;
+}
+
 // Sidebar Contenedor
 .sidebar {
   position: fixed;
@@ -14,6 +31,7 @@ $sidebar-width-large: 300px;
   background: white;
   overflow: auto;
   z-index: 10;
+  background-color: gray(gray6);
 }
 
 // Contendor principal

@@ -1127,6 +1127,13 @@ pre {
  *
  * Estilos relacionados con la plantilla para documentar proyectos.
  */
+.app-nav {
+  height: 4.8rem;
+  padding-right: 4.8rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  text-align: right;
+  z-index: 2; }
+
 .sidebar {
   position: fixed;
   top: 0;
@@ -1137,7 +1144,8 @@ pre {
   border-right: 1px solid #e7ebee;
   background: white;
   overflow: auto;
-  z-index: 10; }
+  z-index: 10;
+  background-color: #f5f6f8; }
 
 .content {
   position: absolute;
@@ -1290,62 +1298,62 @@ main.hidden {
   .markdown-section .docsify-copy-code-button:hover:before {
     color: #e7ebee; }
 
-.app-nav {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: calc(100% - 240px - 3.2rem);
+.app-nav.no-badge {
+  padding-right: 1.6rem; }
+
+.app-nav ul,
+.app-nav li {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  list-style: none; }
+
+.app-nav > ul > li {
+  margin: 0 0.8rem; }
+
+.app-nav > ul > li > p {
   height: 4.8rem;
-  padding-right: 4.8rem;
-  background-color: rgba(255, 255, 255, 0.9);
-  text-align: right;
-  z-index: 2; }
-  .app-nav.no-badge {
-    padding-right: 1.6rem; }
-  .app-nav ul,
-  .app-nav li {
-    display: inline-block;
-    position: relative;
-    margin: 0;
-    list-style: none; }
-  .app-nav > ul > li {
-    margin: 0 0.8rem; }
-  .app-nav > ul > li > p {
-    height: 4.8rem;
-    line-height: 4.8rem;
-    cursor: pointer; }
-  .app-nav p {
-    margin: 0; }
-  .app-nav a {
-    color: #6f777b; }
-  .app-nav a.active,
-  .app-nav a:hover {
-    color: #28a2b8; }
-  .app-nav p > a.active {
-    border-bottom: 2px solid #28a2b8; }
-  .app-nav li:hover ul {
-    display: block; }
-  .app-nav li ul {
-    display: none;
-    position: absolute;
-    top: 3.6rem;
-    right: -0.8rem;
-    max-height: calc(100vh - 3.2rem);
-    padding: 0.8rem 0;
-    border: 1px solid #e7ebee;
-    border-radius: 5px;
-    border-bottom-color: #cfd6da;
-    background-color: #ffffff;
-    text-align: left;
-    overflow-y: auto; }
-  .app-nav li ul li {
-    font-size: 0.85106rem;
-    line-height: 1.6rem;
+  line-height: 4.8rem;
+  cursor: pointer; }
+
+.app-nav p {
+  margin: 0; }
+
+.app-nav a {
+  color: #6f777b; }
+
+.app-nav a.active,
+.app-nav a:hover {
+  color: #28a2b8; }
+
+.app-nav p > a.active {
+  border-bottom: 2px solid #28a2b8; }
+
+.app-nav li:hover ul {
+  display: block; }
+
+.app-nav li ul {
+  display: none;
+  position: absolute;
+  top: 3.6rem;
+  right: -0.8rem;
+  max-height: calc(100vh - 3.2rem);
+  padding: 0.8rem 0;
+  border: 1px solid #e7ebee;
+  border-radius: 5px;
+  border-bottom-color: #cfd6da;
+  background-color: #ffffff;
+  text-align: left;
+  overflow-y: auto; }
+
+.app-nav li ul li {
+  font-size: 0.85106rem;
+  line-height: 1.6rem;
+  display: block;
+  white-space: nowrap; }
+  .app-nav li ul li a {
     display: block;
-    white-space: nowrap; }
-    .app-nav li ul li a {
-      display: block;
-      padding: 0 1.6rem; }
+    padding: 0 1.6rem; }
 
 .github-corner {
   position: fixed;
@@ -1375,13 +1383,8 @@ main.hidden {
   80% {
     transform: rotate(10deg); } }
 
-@media screen and (min-width: 75em) {
-  .app-nav {
-    width: calc(100% - 300px - 3.2rem); } }
-
 @media screen and (max-width: 56.1875em) {
   .app-nav {
-    width: calc(100% - 3.2rem);
     height: 3.2rem;
     padding-right: 3.2rem; }
   .app-nav > ul > li > p {
@@ -1397,23 +1400,44 @@ main.hidden {
     display: none; } }
 
 .app-name-link {
-  display: block; }
+  font-size: 0.61643rem;
+  line-height: 0.8rem;
+  display: block;
+  margin-bottom: 3.2rem;
+  color: #6f777b;
+  font-family: "Source Sans Pro", Helvetica Neue, Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase; }
   .app-name-link img {
     display: block;
     width: 60px;
     margin: 1.6rem auto 0.8rem; }
+  .app-name-link:before {
+    content: '';
+    display: block;
+    margin: 1.6rem auto 0.8rem;
+    width: 60px;
+    height: 60px;
+    background-image: url("../../src/assets/logo.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain; }
   .app-name-link:after {
+    content: 'v.1.0.2';
     font-size: 0.61643rem;
     line-height: 0.8rem;
-    display: block;
-    margin-bottom: 3.2rem;
-    color: #6f777b;
+    display: inline-block;
+    margin-left: 1.6rem;
+    color: #ffffff;
     font-family: "Source Sans Pro", Helvetica Neue, Arial, sans-serif;
     font-weight: 600;
     letter-spacing: 2px;
-    text-align: center;
-    text-transform: uppercase;
-    content: 'Documentación'; }
+    background-color: #6f777b;
+    padding: 0 0.4rem;
+    border-radius: 5px;
+    line-height: 1.6rem; }
 
 .sidebar > nav li,
 .sidebar-nav li {
@@ -1445,7 +1469,7 @@ main.hidden {
     width: calc(100% + 3.2rem);
     height: 100%;
     border-right: 3px solid #28a2b8;
-    background-color: #f5f6f8;
+    background-color: #e7ebee;
     content: '';
     z-index: -1; }
 
@@ -1674,6 +1698,12 @@ main.hidden {
   min-width: 100%;
   border: 0;
   margin: 3.2rem 0; }
+
+.markdown-section img {
+  box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 5px; }
+  .markdown-section img:after {
+    content: attr(alt); }
 
 .markdown-section .blockExample {
   margin: 4.8rem 0; }

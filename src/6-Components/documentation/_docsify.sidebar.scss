@@ -1,6 +1,14 @@
 // Título del sidebar
 .app-name-link {
+  @include fontsize(iota);
   display: block;
+  margin-bottom: double($space);
+  color: gray(gray2);
+  font-family: $base-heading-family;
+  font-weight: $base-heading-weight;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
 
   img {
     display: block;
@@ -8,17 +16,31 @@
     margin: $space auto halve($space);
   }
 
-  &:after {
-    @include fontsize(iota);
+  &:before {
+    content: '';
     display: block;
-    margin-bottom: double($space);
-    color: gray(gray2);
+    margin: $space auto halve($space);
+    width: 60px;
+    height: 60px;
+    background-image: url('../../src/assets/logo.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+
+  &:after {
+    content: 'v.1.0.2';
+    @include fontsize(iota);
+    display: inline-block;
+    margin-left: $space;
+    color: gray(white);
     font-family: $base-heading-family;
     font-weight: $base-heading-weight;
     letter-spacing: 2px;
-    text-align: center;
-    text-transform: uppercase;
-    content: 'Documentación';
+    background-color: gray(gray2);
+    padding: 0 quarter($space);
+    border-radius: $border-radius;
+    line-height: $space;
   }
 }
 
@@ -54,7 +76,7 @@
       width: calc(100% + #{double($space)});
       height: 100%;
       border-right: 3px solid brand();
-      background-color: gray(gray6);
+      background-color: gray(gray5);
       content: '';
       z-index: -1;
     }

@@ -12,12 +12,37 @@
   <div id="app"></div>
 
   <script>
-    window.$docsify = {
-      homepage: 'home.md',
-      basePath: './pages/styleguide',
-      logo: '../../src/assets/logo.svg',
-      name: 'Documentación',
+    const config = {
+      name: 'Didor framework',
       repo: 'https://github.com/fvena/didor-framework2',
+      logo: '../../src/assets/logo.svg',
+      homepage: 'home.md',
+      api: {
+        url: 'http://airzoneservice.airzonesl.es:3080/api/auth/v1/login',
+        user: 'fvena@altracorporacion.es',
+        password: 'foobarfoo'
+      },
+      versions: [
+        {
+          name: '0.7.0',
+          basePath: './pages/styleguide',
+        },
+        {
+          name: '0.8.0',
+          basePath: './pages/styleguide',
+        },
+        {
+          name: '0.9.0',
+          basePath: './pages/styleguide',
+        }
+      ]
+    }
+
+    window.$docsify = {
+      name: config.name,
+      basePath: config.versions[config.versions.length - 1].basePath,
+      repo: config.repo,
+      homepage: config.homepage,
       formatUpdated: '{DD}/{MM} {HH}:{mm}',
       loadNavbar: true,
       loadSidebar: true,
@@ -59,7 +84,7 @@
         });
     }
 
-    login('http://airzoneservice.airzonesl.es:3080/api/auth/v1/login', 'fvena@altracorporacion.es', 'foobarfoo');
+    login(config.api.url, config.api.user, config.api.password);
   </script>
 </body>
 </html>

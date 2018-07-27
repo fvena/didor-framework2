@@ -124,6 +124,15 @@
   margin: double($space) 0;
 }
 
+.markdown-section img {
+  box-shadow: 0 3px 10px 1px rgba(0,0,0,.3);
+  border-radius: $border-radius;
+
+  &:after {
+    content: attr(alt);
+  }
+}
+
 .markdown-section .blockExample {
   margin: triple($space) 0;
 }

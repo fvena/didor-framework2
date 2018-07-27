@@ -74,15 +74,30 @@ Este es un texto de ejemplo:
 ```
 
 apiBlock>
-## PUT /todos/{Id}
+## GET /todos/{Id}
 
-Devuelve un listado con todas las tareas.
+Devuelve todos los datos de una tarea.
 
 ```apiExample
 {
   "url": "http://jsonplaceholder.typicode.com/todos",
   "method": "GET",
-  "params": []
+  "params": [
+    {
+      "name": "id",
+      "required": true,
+      "type": "number",
+      "description": "Id de la tarea",
+      "default": null    
+    },
+    {
+      "name": "userId",
+      "required": false,
+      "type": "number",
+      "description": "Id del usuario",
+      "default": null    
+    }
+  ]
 }
 ```
 
